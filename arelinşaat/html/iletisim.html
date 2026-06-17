@@ -1,0 +1,490 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İletişim | AR-EL İnşaat &amp; Hafriyat</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta
+      name="description"
+      content="AR-EL İnşaat & Hafriyat ile iletişime geçin. Hafriyat, yıkım, dolgu ve altyapı projeleriniz için hızlı teklif ve saha planlama desteği alın."
+    />
+    
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+    <style>
+      @media (max-width: 767px) {
+        #tmNav .navbar-collapse {
+          background: #ffffff;
+          overflow-y: auto;
+        }
+
+        #tmNav .navbar-nav {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+        }
+
+        #tmNav .nav-item {
+          display: block;
+          width: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link,
+        #tmNav .navbar-collapse .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          color: #111111;
+          font-size: 17px;
+          font-weight: 700;
+          padding: 12px 4px;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-submenu {
+          display: none;
+          position: static;
+          min-width: 100%;
+          margin: 4px 0 12px;
+          padding: 4px 0 4px 14px;
+          background: transparent;
+          border: 0;
+          border-left: 2px solid rgba(216, 161, 6, 0.24);
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+
+        #tmNav .tm-nav-dropdown.is-open > .tm-nav-submenu {
+          display: block;
+        }
+
+        #tmNav .tm-nav-submenu li {
+          display: block;
+          width: 100%;
+        }
+
+        #tmNav .tm-nav-submenu-link {
+          display: block;
+          color: #1f2937;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.5;
+          padding: 8px 0;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link:hover,
+        #tmNav .tm-nav-link:focus,
+        #tmNav .tm-nav-submenu-link:hover,
+        #tmNav .tm-nav-submenu-link:focus {
+          color: #d8a106;
+        }
+      }
+    </style>
+    <style>
+      /* HERO */
+      .ic-hero {
+        position: relative;
+        min-height: clamp(280px, 38vh, 400px);
+        display: flex;
+        align-items: flex-end;
+        padding: 120px 0 52px;
+        overflow: hidden;
+        background: #111;
+      }
+      .ic-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(110deg, rgba(6,6,6,0.90) 0%, rgba(6,6,6,0.70) 55%, rgba(6,6,6,0.48) 100%),
+          url("img/heroresim-ornek1.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      .ic-hero-inner { position: relative; z-index: 1; }
+      .ic-breadcrumb { margin: 0 0 10px; color: rgba(255,255,255,0.80); font-size: 0.93rem; }
+      .ic-breadcrumb a { color: #f5b400; text-decoration: none; }
+      .ic-hero h1 { margin: 0 0 14px; color: #fff; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; }
+      .ic-hero-bar { width: 70px; height: 4px; border-radius: 999px; background: #f5b400; }
+
+      /* MAIN CONTACT SECTION */
+      .ic-main {
+        padding: 90px 0;
+        background: #f5f5f5;
+      }
+      .ic-container { max-width: 1200px; }
+
+      .ic-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+        gap: 60px;
+        align-items: center;
+      }
+
+      /* Sol kolon */
+      .ic-info-title {
+        margin: 0 0 10px;
+        color: #111;
+        font-size: clamp(1.75rem, 2.8vw, 2.1rem);
+        font-weight: 700;
+        line-height: 1.25;
+      }
+      .ic-gold-bar { width: 70px; height: 4px; border-radius: 999px; background: #f5b400; margin-bottom: 20px; }
+      .ic-info-desc { color: #666; font-size: 1rem; line-height: 1.82; margin-bottom: 36px; }
+
+      .ic-items { display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px; }
+      .ic-item { display: flex; gap: 18px; align-items: flex-start; }
+      .ic-item-icon {
+        flex-shrink: 0;
+        font-size: 1.75rem;
+        color: #f5b400;
+        width: 36px;
+        margin-top: 2px;
+        text-align: center;
+      }
+      .ic-item-body h4 {
+        margin: 0 0 4px;
+        color: #111;
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .ic-item-body p,
+      .ic-item-body a {
+        margin: 0;
+        color: #555;
+        font-size: 0.97rem;
+        line-height: 1.72;
+        text-decoration: none;
+        display: block;
+      }
+      .ic-item-body a:hover { color: #d8a106; }
+
+      .ic-wa-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 26px;
+        border-radius: 12px;
+        background: #25d366;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+      }
+      .ic-wa-btn:hover {
+        color: #fff;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(37,211,102,0.36);
+      }
+
+      /* Sağ kolon harita */
+      .ic-map-wrap {
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 12px 35px rgba(0,0,0,0.10);
+        line-height: 0;
+      }
+      .ic-map-wrap iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        display: block;
+      }
+
+      /* CTA */
+      .ic-cta { padding: 60px 0 90px; background: #f5f5f5; }
+      .ic-cta-inner {
+        border-radius: 20px;
+        padding: 44px 42px;
+        background: linear-gradient(135deg, #111 0%, #1a1a1a 52%, #2b281c 100%);
+        box-shadow: 0 18px 42px rgba(0,0,0,0.22);
+      }
+      .ic-cta h3 { margin: 0 0 12px; color: #fff; font-size: clamp(1.55rem, 2.8vw, 2rem); font-weight: 800; }
+      .ic-cta p  { margin: 0; color: rgba(255,255,255,0.84); font-size: 1.02rem; line-height: 1.75; max-width: 640px; }
+      .ic-cta-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .ic-btn {
+        min-width: 160px; padding: 13px 24px; border-radius: 999px;
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        font-weight: 700; text-decoration: none;
+        transition: transform 0.24s ease, box-shadow 0.24s ease;
+      }
+      .ic-btn:hover { transform: translateY(-2px); text-decoration: none; }
+      .ic-btn-primary { color: #111; background: #f5b400; }
+      .ic-btn-primary:hover { color: #111; box-shadow: 0 10px 24px rgba(245,180,0,0.38); }
+      .ic-btn-outline { color: #fff; border: 1px solid rgba(255,255,255,0.32); background: rgba(255,255,255,0.05); }
+      .ic-btn-outline:hover { color: #fff; background: rgba(255,255,255,0.12); }
+
+      /* RESPONSIVE */
+      @media (max-width: 991px) {
+        .ic-grid { grid-template-columns: 1fr; gap: 40px; }
+        .ic-map-wrap iframe { height: 340px; }
+      }
+      @media (max-width: 767px) {
+        .ic-hero { min-height: 300px; padding: 112px 0 42px; }
+        .ic-main { padding: 68px 0; }
+        .ic-cta { padding-bottom: 72px; }
+        .ic-cta-inner { padding: 30px 22px; }
+        .ic-btn { width: 100%; }
+        .ic-map-wrap iframe { height: 300px; }
+      }
+    </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </head>
+  <body class="tm-detail-page">
+
+    <!-- NAVBAR -->
+    <header class="header-wrapper">
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <p class="top-bar-text">AR-EL İnşaat &amp; Hafriyat'a hoş geldiniz.</p>
+          <div class="top-bar-phones">
+             <a href="mailto:arelhafriyat@gmail.com"><i class="fas fa-envelope"></i> arelhafriyat@gmail.com</a>
+            <a href="tel:+905470915252"><i class="fas fa-phone-alt"></i> +90 547 091 52 52</a>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-md tm-navbar main-navbar sticky-top" id="tmNav">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="img/arel-logo.jpg" alt="AR-EL Hafriyat" class="tm-brand-logo" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars navbar-toggler-icon"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="tm-mobile-menu-head">
+        <span class="tm-mobile-menu-title">Menü</span>
+        <button type="button" class="tm-mobile-menu-close" aria-label="Menüyü Kapat">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="index.html">Anasayfa</a>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Hizmetlerimiz <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Hizmetlerimiz Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hafriyat-hizmetleri.html">Hafriyat Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="yikim.html">Yıkım Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="altyapi-hafriyat.html">Altyapı Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+            <li><a class="tm-nav-submenu-link" href="toprak-malzeme.html">Toprak ve Malzeme Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="peyzaj-cevre-duzenleme.html">Peyzaj ve Çevre Düzenleme</a></li>
+            <li><a class="tm-nav-submenu-link" href="kepce-kiralama.html">Kepçe Kiralama</a></li>
+            <li><a class="tm-nav-submenu-link" href="mini-ekipmanlar.html">Mini Ekipmanlarımız</a></li>
+            <li><a class="tm-nav-submenu-link" href="yol-acma-dolgu.html">Yol Açma ve Dolgu</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Kurumsal <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Kurumsal Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a class="tm-nav-submenu-link" href="vizyonumuz.html">Vizyonumuz</a></li>
+            <li><a class="tm-nav-submenu-link" href="misyonumuz.html">Misyonumuz</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="iletisim.html">İletişim</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    </header>
+
+    <!-- HERO -->
+    <header class="ic-hero">
+      <div class="container ic-container ic-hero-inner">
+        <p class="ic-breadcrumb"><a href="index.html">Anasayfa</a> / İletişim</p>
+        <h1>İletişim</h1>
+        <div class="ic-hero-bar"></div>
+      </div>
+    </header>
+
+    <!-- ANA İLETİŞİM -->
+    <section class="ic-main">
+      <div class="container ic-container">
+        <div class="ic-grid">
+
+          <!-- Sol: Bilgiler -->
+          <div>
+            <h2 class="ic-info-title">İletişim Bilgilerimiz</h2>
+            <div class="ic-gold-bar"></div>
+            <p class="ic-info-desc">
+              Projeleriniz, hizmet talepleriniz ve teklif almak için bizimle iletişime geçebilirsiniz. Ekibimiz size en kısa sürede dönüş sağlayacaktır.
+            </p>
+
+            <div class="ic-items">
+              <div class="ic-item">
+                <div class="ic-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="ic-item-body">
+                  <h4>Adres Bilgisi</h4>
+                  <p>Aksaray, Türkiye</p>
+                </div>
+              </div>
+              <div class="ic-item">
+                <div class="ic-item-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="ic-item-body">
+                  <h4>Telefon Numarası</h4>
+                  <a href="tel:+905470915252">+90 547 091 52 52</a>
+                </div>
+              </div>
+              <div class="ic-item">
+                <div class="ic-item-icon"><i class="fas fa-envelope"></i></div>
+                <div class="ic-item-body">
+                  <h4>E-posta Adresi</h4>
+                  <a href="mailto:arelhafriyat@gmail.com">arelhafriyat@gmail.com</a>
+                </div>
+              </div>
+              <div class="ic-item">
+                <div class="ic-item-icon"><i class="fab fa-instagram"></i></div>
+                <div class="ic-item-body">
+                  <h4>Instagram</h4>
+                  <a href="https://www.instagram.com/arelhafriyat" target="_blank" rel="noopener noreferrer">@arelhafriyat</a>
+                </div>
+              </div>
+              <div class="ic-item">
+                <div class="ic-item-icon"><i class="fas fa-clock"></i></div>
+                <div class="ic-item-body">
+                  <h4>Çalışma Saatleri</h4>
+                  <p>Her Gün 08:00 - 22:00</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://wa.me/905470915252?text=Merhabalar,%20bilgi%20alabilir%20miyim?" class="ic-wa-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz
+            </a>
+          </div>
+
+          <!-- Sağ: Harita -->
+          <div class="ic-map-wrap">
+            <iframe
+              src="https://www.google.com/maps?q=K%C4%B1rl%C4%B1%20Merkez%20%2F%20Per%C5%9Fembe%20%2F%20Ordu&output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Kırlı Merkez / Perşembe / Ordu"
+            ></iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="ic-cta">
+      <div class="container ic-container">
+        <div class="ic-cta-inner">
+          <h3>Projeniz İçin Profesyonel Destek Alın</h3>
+          <p>Hafriyat, yıkım, moloz taşıma, dolgu ve altyapı çalışmalarınız için AR-EL İnşaat &amp; Hafriyat yanınızda.</p>
+          <div class="ic-cta-actions">
+            <a href="tel:+905470915252" class="ic-btn ic-btn-primary"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
+            <a href="https://wa.me/905470915252?text=Merhabalar,%20bilgi%20alabilir%20miyim?" class="ic-btn ic-btn-outline" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="tm-site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4>AR-EL Hafriyat</h4>
+            <p>Hafriyat, kazı, yıkım, dolgu ve iş makinesi kiralama alanlarında profesyonel çözümler sunuyoruz.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+              <li><a href="index.html#infinite">Anasayfa</a></li>
+              <li><a href="index.html#whatwedo">Hizmetlerimiz</a></li>
+              <li><a href="index.html#gallery">Kurumsal</a></li>
+              <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>Hizmetler</h4>
+            <ul>
+              <li><a href="hafriyat-hizmetleri.html">Hafriyat</a></li>
+              <li><a href="yikim.html">Yıkım</a></li>
+              <li><a href="yikim.html">Moloz Taşıma</a></li>
+              <li><a href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+              <li><a href="altyapi-hafriyat.html">Altyapı Kazı</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>İletişim</h4>
+            <ul>
+              <li>+90 547 091 52 52</li>
+              <li>info@arelhafriyat.com</li>
+              <li><a href="https://www.instagram.com/arelhafriyat" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> @arelhafriyat</a></li>
+              <li>Aksaray, Türkiye</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tm-footer-bottom">&copy; 2026 AR-EL Hafriyat. Tüm hakları saklıdır.</div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $('#tmNav a').on('click', function () {
+        $('.navbar-collapse').removeClass('show');
+      });
+    </script>
+      <a href="#" class="scroll-top-btn" aria-label="Sayfanın en üstüne çık">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <script src="js/navbar-dropdown.js"></script>
+    <script src="js/scroll-top.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

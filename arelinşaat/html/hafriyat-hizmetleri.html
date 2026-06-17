@@ -1,0 +1,909 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hafriyat Hizmetleri | AR-EL İnşaat &amp; Hafriyat</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta
+      name="description"
+      content="AR-EL İnşaat &amp; Hafriyat olarak temel kazısı, kaba hafriyat, saha hazırlığı ve zemin düzenleme çalışmalarında güçlü makine parkurumuz ve deneyimli ekibimizle profesyonel çözümler sunuyoruz."
+    />
+    <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+    <style>
+      @media (max-width: 767px) {
+        #tmNav .navbar-collapse {
+          background: #ffffff;
+          overflow-y: auto;
+        }
+
+        #tmNav .navbar-nav {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+        }
+
+        #tmNav .nav-item {
+          display: block;
+          width: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link,
+        #tmNav .navbar-collapse .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          color: #111111;
+          font-size: 17px;
+          font-weight: 700;
+          padding: 12px 4px;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-submenu {
+          display: none;
+          position: static;
+          min-width: 100%;
+          margin: 4px 0 12px;
+          padding: 4px 0 4px 14px;
+          background: transparent;
+          border: 0;
+          border-left: 2px solid rgba(216, 161, 6, 0.24);
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+
+        #tmNav .tm-nav-dropdown.is-open > .tm-nav-submenu {
+          display: block;
+        }
+
+        #tmNav .tm-nav-submenu li {
+          display: block;
+          width: 100%;
+        }
+
+        #tmNav .tm-nav-submenu-link {
+          display: block;
+          color: #1f2937;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.5;
+          padding: 8px 0;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link:hover,
+        #tmNav .tm-nav-link:focus,
+        #tmNav .tm-nav-submenu-link:hover,
+        #tmNav .tm-nav-submenu-link:focus {
+          color: #d8a106;
+        }
+      }
+    </style>
+    <style>
+      .hf-page {
+        background: #f6f7f8;
+      }
+
+      .hf-container {
+        max-width: 1240px;
+      }
+
+      .hf-section {
+        padding: 100px 0;
+      }
+
+      .hf-section-title {
+        margin-bottom: 18px;
+        color: #151515;
+        font-size: clamp(2rem, 3.4vw, 2.9rem);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+
+      .hf-section-title::after {
+        content: "";
+        display: block;
+        width: 74px;
+        height: 4px;
+        margin-top: 14px;
+        border-radius: 999px;
+        background: #d8a106;
+      }
+
+      .hf-section-text {
+        color: #666;
+        font-size: 1.06rem;
+        line-height: 1.85;
+      }
+
+      .hf-hero {
+        position: relative;
+        min-height: clamp(360px, 46vh, 460px);
+        display: flex;
+        align-items: flex-end;
+        padding: 120px 0 56px;
+        overflow: hidden;
+        background: #101010;
+      }
+
+      .hf-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(115deg, rgba(10, 10, 10, 0.82) 0%, rgba(10, 10, 10, 0.62) 48%, rgba(10, 10, 10, 0.38) 100%),
+          url("img/hizmetler/hafriyat/hafriyat-hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .hf-hero-content {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+      }
+
+      .hf-breadcrumb {
+        margin: 0 0 10px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 0.95rem;
+      }
+
+      .hf-breadcrumb a {
+        color: #f5b400;
+        text-decoration: none;
+      }
+
+      .hf-hero-title {
+        margin: 0;
+        color: #fff;
+        font-size: clamp(2.1rem, 5vw, 3.35rem);
+        font-weight: 800;
+      }
+
+      .hf-intro-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 38px;
+        align-items: center;
+      }
+
+      .hf-intro-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .hf-badge {
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        color: #1b1b1b;
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .hf-media-card {
+        overflow: hidden;
+        border-radius: 18px;
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+      }
+
+      .hf-media-card img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hf-mini-gallery {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .hf-mini-gallery figure {
+        margin: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .hf-mini-gallery img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s ease;
+      }
+
+      .hf-mini-gallery figure:hover img {
+        transform: scale(1.06);
+      }
+
+      .hf-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 26px;
+      }
+
+      .hf-card {
+        height: 100%;
+        padding: 26px 24px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+        transition: transform 0.28s ease, box-shadow 0.28s ease;
+      }
+
+      .hf-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+      }
+
+      .hf-card-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #171717;
+        background: #f5b400;
+        font-size: 1rem;
+      }
+
+      .hf-card h3 {
+        margin-bottom: 10px;
+        color: #111;
+        font-size: 1.24rem;
+        font-weight: 700;
+      }
+
+      .hf-card p {
+        margin: 0;
+        color: #666;
+        font-size: 0.98rem;
+        line-height: 1.72;
+      }
+
+      .hf-info-block {
+        background: #eef1f3;
+      }
+
+      .hf-info-grid,
+      .hf-safety-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      .hf-info-image {
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .hf-info-image img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hf-timeline {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .hf-step {
+        position: relative;
+        padding: 28px 20px 24px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      .hf-step-number {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        margin-bottom: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 800;
+        color: #171717;
+        background: #f5b400;
+      }
+
+      .hf-step h4 {
+        margin-bottom: 8px;
+        color: #151515;
+        font-size: 1.06rem;
+        font-weight: 700;
+      }
+
+      .hf-step p {
+        margin: 0;
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.68;
+      }
+
+      .hf-types-grid,
+      .hf-equipment-grid,
+      .hf-why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .hf-type,
+      .hf-equipment,
+      .hf-why {
+        padding: 22px 20px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      .hf-type-head,
+      .hf-equipment-head,
+      .hf-why-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .hf-type-head i,
+      .hf-equipment-head i,
+      .hf-why-head i {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #171717;
+        background: rgba(245, 180, 0, 0.25);
+      }
+
+      .hf-type h4,
+      .hf-equipment h4,
+      .hf-why h4 {
+        margin: 0;
+        color: #151515;
+        font-size: 1.02rem;
+        font-weight: 700;
+      }
+
+      .hf-type p,
+      .hf-equipment p,
+      .hf-why p {
+        margin: 0;
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      .hf-safety-list {
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hf-safety-list li {
+        position: relative;
+        margin-bottom: 12px;
+        padding-left: 28px;
+        color: #494949;
+        line-height: 1.7;
+      }
+
+      .hf-safety-list li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: #d8a106;
+      }
+
+      .hf-cta {
+        padding: 0 0 100px;
+      }
+
+      .hf-cta-inner {
+        border-radius: 20px;
+        padding: 44px 42px;
+        background: linear-gradient(135deg, #121212 0%, #1d1d1d 52%, #2a2619 100%);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+      }
+
+      .hf-cta h3 {
+        margin: 0 0 12px;
+        color: #fff;
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        font-weight: 800;
+      }
+
+      .hf-cta p {
+        margin: 0;
+        max-width: 560px;
+        color: rgba(255, 255, 255, 0.86);
+        line-height: 1.75;
+      }
+
+      .hf-cta-actions {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .hf-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-width: 170px;
+        padding: 13px 22px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .hf-btn:hover {
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+
+      .hf-btn-primary {
+        color: #111;
+        background: #f5b400;
+      }
+
+      .hf-btn-primary:hover {
+        color: #111;
+        box-shadow: 0 10px 24px rgba(245, 180, 0, 0.35);
+      }
+
+      .hf-btn-outline {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .hf-btn-outline:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      @media (max-width: 1199px) {
+        .hf-timeline {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 991px) {
+        .hf-section {
+          padding: 84px 0;
+        }
+
+        .hf-intro-grid,
+        .hf-info-grid,
+        .hf-safety-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hf-cards-grid,
+        .hf-types-grid,
+        .hf-equipment-grid,
+        .hf-why-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .hf-media-card img,
+        .hf-info-image img {
+          height: 320px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .hf-hero {
+          min-height: 360px;
+          padding: 114px 0 46px;
+        }
+
+        .hf-section {
+          padding: 72px 0;
+        }
+
+        .hf-mini-gallery,
+        .hf-cards-grid,
+        .hf-timeline,
+        .hf-types-grid,
+        .hf-equipment-grid,
+        .hf-why-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hf-mini-gallery img {
+          height: 220px;
+        }
+
+        .hf-cta {
+          padding-bottom: 76px;
+        }
+
+        .hf-cta-inner {
+          padding: 32px 24px;
+        }
+
+        .hf-btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body class="tm-detail-page hf-page">
+    <header class="header-wrapper">
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <p class="top-bar-text">AR-EL İnşaat &amp; Hafriyat'a hoş geldiniz.</p>
+          <div class="top-bar-phones">
+            <a href="mailto:arelhafriyat@gmail.com"><i class="fas fa-envelope"></i> arelhafriyat@gmail.com</a>
+            <a href="tel:+905470915252"><i class="fas fa-phone-alt"></i> +90 547 091 52 52</a>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-md tm-navbar main-navbar sticky-top" id="tmNav">
+        <div class="container">
+          <a href="index.html" class="navbar-brand">
+            <img src="img/arel-logo.jpg" alt="AR-EL Hafriyat" class="tm-brand-logo" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+            <i class="fas fa-bars navbar-toggler-icon"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="tm-mobile-menu-head">
+              <span class="tm-mobile-menu-title">Menü</span>
+              <button type="button" class="tm-mobile-menu-close" aria-label="Menüyü Kapat">
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link tm-nav-link" href="index.html">Anasayfa</a></li>
+              <li class="nav-item tm-nav-dropdown">
+                <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">Hizmetlerimiz <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i></a>
+                <ul class="tm-nav-submenu" aria-label="Hizmetlerimiz Alt Menüsü">
+                  <li><a class="tm-nav-submenu-link" href="hafriyat-hizmetleri.html">Hafriyat Hizmetleri</a></li>
+                  <li><a class="tm-nav-submenu-link" href="yikim.html">Yıkım Hizmetleri</a></li>
+                  <li><a class="tm-nav-submenu-link" href="altyapi-hafriyat.html">Altyapı Hizmetleri</a></li>
+                  <li><a class="tm-nav-submenu-link" href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+                  <li><a class="tm-nav-submenu-link" href="toprak-malzeme.html">Toprak ve Malzeme Hizmetleri</a></li>
+                  <li><a class="tm-nav-submenu-link" href="peyzaj-cevre-duzenleme.html">Peyzaj ve Çevre Düzenleme</a></li>
+                  <li><a class="tm-nav-submenu-link" href="kepce-kiralama.html">Kepçe Kiralama</a></li>
+                  <li><a class="tm-nav-submenu-link" href="mini-ekipmanlar.html">Mini Ekipmanlarımız</a></li>
+                  <li><a class="tm-nav-submenu-link" href="yol-acma-dolgu.html">Yol Açma ve Dolgu</a></li>
+                </ul>
+              </li>
+              <li class="nav-item tm-nav-dropdown">
+                <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">Kurumsal <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i></a>
+                <ul class="tm-nav-submenu" aria-label="Kurumsal Alt Menüsü">
+                  <li><a class="tm-nav-submenu-link" href="hakkimizda.html">Hakkımızda</a></li>
+                  <li><a class="tm-nav-submenu-link" href="vizyonumuz.html">Vizyonumuz</a></li>
+                  <li><a class="tm-nav-submenu-link" href="misyonumuz.html">Misyonumuz</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link tm-nav-link" href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <header class="hf-hero">
+      <div class="container hf-container hf-hero-content">
+        <p class="hf-breadcrumb"><a href="index.html">Anasayfa</a> / Hafriyat Hizmetleri</p>
+        <h1 class="hf-hero-title">Hafriyat Hizmetleri</h1>
+      </div>
+    </header>
+
+    <section class="hf-section">
+      <div class="container hf-container">
+        <div class="hf-intro-grid">
+          <div>
+            <h2 class="hf-section-title">Profesyonel Hafriyat Hizmetleri</h2>
+            <p class="hf-section-text">
+              AR-EL İnşaat &amp; Hafriyat olarak temel kazısı, kaba hafriyat, saha hazırlığı ve zemin düzenleme çalışmalarında güçlü makine parkurumuz ve deneyimli ekibimizle profesyonel çözümler sunuyoruz.
+              Proje alanını analiz ederek güvenli, planlı ve zamanında tamamlanan hafriyat süreçleri yürütüyoruz.
+            </p>
+            <div class="hf-intro-badges">
+              <span class="hf-badge">Güçlü makine parkuru</span>
+              <span class="hf-badge">Planlı saha hazırlığı</span>
+              <span class="hf-badge">Güvenli hafriyat çözümleri</span>
+            </div>
+          </div>
+          <div class="hf-media-card">
+            <img src="img/hizmetler/hafriyat/hafriyat-hero.jpg" alt="Profesyonel hafriyat çalışması" />
+          </div>
+        </div>
+
+        <div class="hf-mini-gallery">
+          <figure><img src="img/hizmetler/hafriyat/hafriyat-3.jpg" alt="Temel kazısı" /></figure>
+          <figure><img src="img/hizmetler/hafriyat/hafriyat-4.jpg" alt="Hafriyat saha çalışması" /></figure>
+          <figure><img src="img/hizmetler/hafriyat/hafriyat-5.jpg" alt="Hafriyat operasyonu" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="hf-section pt-0">
+      <div class="container hf-container">
+        <h2 class="hf-section-title">Hafriyat Hizmetlerimiz</h2>
+        <div class="hf-cards-grid">
+          <article class="hf-card">
+            <span class="hf-card-icon"><i class="fas fa-ruler-combined"></i></span>
+            <h3>Temel Kazısı</h3>
+            <p>Yapı temelleri için zemin ölçülerine uygun, güvenli ve planlı kazı çalışmaları gerçekleştiriyoruz.</p>
+          </article>
+          <article class="hf-card">
+            <span class="hf-card-icon"><i class="fas fa-mountain"></i></span>
+            <h3>Kaba Hafriyat</h3>
+            <p>Toprak kazısı, saha açma ve geniş hacimli hafriyat işlemlerini güçlü ekipmanlarla kontrollü biçimde yürütüyoruz.</p>
+          </article>
+          <article class="hf-card">
+            <span class="hf-card-icon"><i class="fas fa-hard-hat"></i></span>
+            <h3>Saha Hazırlığı</h3>
+            <p>İnşaat ve uygulama öncesinde proje sahasını erişilebilir, güvenli ve düzenli çalışma alanına dönüştürüyoruz.</p>
+          </article>
+          <article class="hf-card">
+            <span class="hf-card-icon"><i class="fas fa-road"></i></span>
+            <h3>Zemin Düzenleme</h3>
+            <p>Kazı sonrası sahayı sonraki imalatlara uygun hale getirecek tesviye ve düzenleme işlemleri yapıyoruz.</p>
+          </article>
+          <article class="hf-card">
+            <span class="hf-card-icon"><i class="fas fa-truck-loading"></i></span>
+            <h3>Moloz Yükleme</h3>
+            <p>Çıkan hafriyat ve moloz malzemelerini düzenli yükleme planı ile sahadan güvenli biçimde uzaklaştırıyoruz.</p>
+          </article>
+          <article class="hf-card">
+            <span class="hf-card-icon"><i class="fas fa-clipboard-check"></i></span>
+            <h3>Kontrollü Teslim</h3>
+            <p>İş güvenliği ve zaman planlaması odağıyla operasyonu tamamlayıp sahayı düzenli şekilde teslim ediyoruz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="hf-section hf-info-block">
+      <div class="container hf-container">
+        <div class="hf-info-grid">
+          <div>
+            <h2 class="hf-section-title">Hizmet Açıklaması</h2>
+            <p class="hf-section-text">
+              Hafriyat çalışmalarında proje alanının zemin yapısını, kazı derinliğini ve lojistik akışını dikkate alarak en uygun operasyon planını oluşturuyoruz.
+            </p>
+            <p class="hf-section-text">
+              Modern makine parkurumuz ve deneyimli saha ekibimizle temel kazısı, kaba hafriyat, moloz yükleme ve saha açma işlemlerini güvenli şekilde yürütüyoruz.
+            </p>
+            <p class="hf-section-text">
+              İş güvenliği, zaman planlaması ve düzenli saha teslimi odağıyla projelerinize kontrollü bir başlangıç sağlıyoruz.
+            </p>
+          </div>
+          <div class="hf-info-image">
+            <img src="img/hizmetler/hafriyat/hafriyat-1.jpg" alt="Hafriyat çalışması" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hf-section">
+      <div class="container hf-container">
+        <h2 class="hf-section-title">Hafriyat Süreci Nasıl İlerler?</h2>
+        <div class="hf-timeline">
+          <article class="hf-step">
+            <span class="hf-step-number">1</span>
+            <h4>Saha Analizi</h4>
+            <p>Proje alanı incelenir, zemin yapısı değerlendirilir ve kazı ihtiyaçları netleştirilir.</p>
+          </article>
+          <article class="hf-step">
+            <span class="hf-step-number">2</span>
+            <h4>Operasyon Planı</h4>
+            <p>Kullanılacak ekipman, kazı derinliği ve yükleme akışı proje koşullarına göre planlanır.</p>
+          </article>
+          <article class="hf-step">
+            <span class="hf-step-number">3</span>
+            <h4>Kazı ve Yükleme</h4>
+            <p>Belirlenen saha içinde hafriyat uygulaması yapılır ve çıkan malzeme kontrollü şekilde yüklenir.</p>
+          </article>
+          <article class="hf-step">
+            <span class="hf-step-number">4</span>
+            <h4>Kontrol ve Teslim</h4>
+            <p>Çalışma alanı düzenlenir, son kontroller tamamlanır ve saha kullanıma hazır halde teslim edilir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="hf-section pt-0">
+      <div class="container hf-container">
+        <h2 class="hf-section-title">Hafriyat Kapsamı</h2>
+        <div class="hf-types-grid">
+          <article class="hf-type">
+            <div class="hf-type-head"><i class="fas fa-drafting-compass"></i><h4>Temel Hafriyatı</h4></div>
+            <p>Bina ve yapı temelleri için gerekli ölçü ve güvenlik kriterlerine uygun kazı uygulamalarıdır.</p>
+          </article>
+          <article class="hf-type">
+            <div class="hf-type-head"><i class="fas fa-route"></i><h4>Saha Açma</h4></div>
+            <p>Uygulama öncesinde çalışma alanının açılması, temizlenmesi ve erişime uygun hale getirilmesidir.</p>
+          </article>
+          <article class="hf-type">
+            <div class="hf-type-head"><i class="fas fa-project-diagram"></i><h4>Altyapı Ön Kazısı</h4></div>
+            <p>Hat, kanal ve bağlantı işlemleri öncesinde gerekli zemin hazırlığını sağlayan teknik kazılardır.</p>
+          </article>
+          <article class="hf-type">
+            <div class="hf-type-head"><i class="fas fa-layer-group"></i><h4>Zemin Tesviyesi</h4></div>
+            <p>Sahanın kot farklarını dengeleyerek sonraki imalatlara uygun hale getiren düzenleme işlemleridir.</p>
+          </article>
+          <article class="hf-type">
+            <div class="hf-type-head"><i class="fas fa-tree"></i><h4>Peyzaj Öncesi Hazırlık</h4></div>
+            <p>Çevre düzenleme ve peyzaj uygulamaları öncesinde ihtiyaç duyulan hafriyat ve zemin hazırlığını kapsar.</p>
+          </article>
+          <article class="hf-type">
+            <div class="hf-type-head"><i class="fas fa-dumpster"></i><h4>Moloz ve Atık Yönetimi</h4></div>
+            <p>Çıkan hafriyat ve molozun güvenli biçimde toplanması, yüklenmesi ve taşınması sürecidir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="hf-section pt-0">
+      <div class="container hf-container">
+        <div class="hf-safety-grid">
+          <div>
+            <h2 class="hf-section-title">Planlı ve Güvenli Hafriyat</h2>
+            <p class="hf-section-text">
+              Hafriyat çalışmalarında iş güvenliği, saha düzeni ve atık yönetimi büyük önem taşır. AR-EL İnşaat &amp; Hafriyat olarak tüm operasyonları kontrollü çalışma disiplini, çevre duyarlılığı ve proje takvimine uygun yönetim anlayışıyla yürütüyoruz.
+            </p>
+            <ul class="hf-safety-list">
+              <li>Kontrollü çalışma alanı oluşturma</li>
+              <li>Düzenli yükleme ve lojistik akışı</li>
+              <li>Atık ve molozların güvenli taşınması</li>
+              <li>İş güvenliği kurallarına uygun operasyon</li>
+              <li>Zamanında ve planlı saha teslimi</li>
+            </ul>
+          </div>
+          <div class="hf-info-image">
+            <img src="img/hizmetler/hafriyat/hafriyat-2.jpg" alt="Güvenli saha uygulaması" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hf-section pt-0">
+      <div class="container hf-container">
+        <h2 class="hf-section-title">Hafriyat Teknolojileri ve Ekipmanlarımız</h2>
+        <p class="hf-section-text mb-4">Projelerde ihtiyaca uygun iş makineleri kullanarak hızlı, güvenli ve verimli hafriyat çözümleri üretiyoruz.</p>
+        <div class="hf-equipment-grid">
+          <article class="hf-equipment"><div class="hf-equipment-head"><i class="fas fa-truck-monster"></i><h4>Ekskavatör</h4></div><p>Derin kazı ve geniş hacimli hafriyat operasyonlarında yüksek performans sağlar.</p></article>
+          <article class="hf-equipment"><div class="hf-equipment-head"><i class="fa-solid fa-truck-front"></i><h4>Kepçe</h4></div><p>Yükleme, taşıma ve saha düzenleme süreçlerinde esnek kullanım sunar.</p></article>
+          <article class="hf-equipment"><div class="hf-equipment-head"><i class="fas fa-truck"></i><h4>Kamyon</h4></div><p>Hafriyat malzemelerinin güvenli ve düzenli nakliyesini gerçekleştirir.</p></article>
+          <article class="hf-equipment"><div class="hf-equipment-head"><i class="fas fa-road"></i><h4>Silindir</h4></div><p>Zemin sıkıştırma ve tesviye işlemlerinde dengeli sonuç üretir.</p></article>
+          <article class="hf-equipment"><div class="hf-equipment-head"><i class="fas fa-ruler"></i><h4>Greyder</h4></div><p>Saha yüzeylerinde hassas kotlama ve düzleme imkanı sağlar.</p></article>
+          <article class="hf-equipment"><div class="hf-equipment-head"><i class="fa-solid fa-screwdriver-wrench"></i><h4>Mini Ekipmanlar</h4></div><p>Dar ve erişimi zor alanlarda kontrollü uygulama yapılmasına yardımcı olur.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="hf-section pt-0">
+      <div class="container hf-container">
+        <h2 class="hf-section-title">Neden AR-EL İnşaat &amp; Hafriyat?</h2>
+        <div class="hf-why-grid">
+          <article class="hf-why"><div class="hf-why-head"><i class="fas fa-users"></i><h4>Deneyimli Kadro</h4></div><p>Sahada uzman ekibimizle her projeyi teknik gerekliliklere uygun yönetiyoruz.</p></article>
+          <article class="hf-why"><div class="hf-why-head"><i class="fas fa-cogs"></i><h4>Güçlü Makine Parkuru</h4></div><p>Güncel ekipman altyapımızla farklı ölçeklerde işlerde yüksek verim sunuyoruz.</p></article>
+          <article class="hf-why"><div class="hf-why-head"><i class="fas fa-clock"></i><h4>Zamanında Teslimat</h4></div><p>Planlı operasyon yaklaşımıyla iş programına uygun teslim performansı sağlıyoruz.</p></article>
+          <article class="hf-why"><div class="hf-why-head"><i class="fas fa-shield-alt"></i><h4>Güvenli Çalışma</h4></div><p>İş güvenliği kurallarını tüm süreçlerde önceliklendiriyor ve denetimli çalışıyoruz.</p></article>
+          <article class="hf-why"><div class="hf-why-head"><i class="fas fa-clipboard-check"></i><h4>Planlı Operasyon</h4></div><p>Keşiften teslime kadar tüm adımları proje hedeflerine göre disiplinli şekilde yürütüyoruz.</p></article>
+          <article class="hf-why"><div class="hf-why-head"><i class="fas fa-leaf"></i><h4>Çevreye Duyarlı Hizmet</h4></div><p>Atık yönetimi ve saha düzeninde sürdürülebilir, mevzuata uygun yöntemler uyguluyoruz.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="hf-cta">
+      <div class="container hf-container">
+        <div class="hf-cta-inner">
+          <h3>Hafriyat Projeleriniz İçin Teklif Alın</h3>
+          <p>Profesyonel ekibimiz, projenize en uygun hafriyat çözümünü sunmak için hazır.</p>
+          <div class="hf-cta-actions">
+            <a href="iletisim.html" class="hf-btn hf-btn-primary"><i class="fas fa-phone-alt"></i> İletişime Geç</a>
+            <a href="https://wa.me/905470915252?text=Merhabalar,%20bilgi%20alabilir%20miyim?" class="hf-btn hf-btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="tm-site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4>AR-EL Hafriyat</h4>
+            <p>Hafriyat, yıkım, altyapı, dolgu ve kiralama alanlarında profesyonel saha çözümleri sunuyoruz.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+              <li><a href="index.html#infinite">Anasayfa</a></li>
+              <li><a href="index.html#whatwedo">Hizmetlerimiz</a></li>
+              <li><a href="hakkimizda.html">Kurumsal</a></li>
+              <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>Hizmetler</h4>
+            <ul>
+              <li><a href="hafriyat-hizmetleri.html">Hafriyat Hizmetleri</a></li>
+              <li><a href="yikim.html">Yıkım Hizmetleri</a></li>
+              <li><a href="altyapi-hafriyat.html">Altyapı Hizmetleri</a></li>
+              <li><a href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+              <li><a href="mini-ekipmanlar.html">Mini Ekipmanlarımız</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>İletişim</h4>
+            <ul>
+              <li>+90 547 091 52 52</li>
+              <li>arelhafriyat@gmail.com</li>
+              <li><a href="https://www.instagram.com/arelhafriyat" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram: @arelhafriyat</a></li>
+              <li>İstanbul, Türkiye</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tm-footer-bottom">&copy; 2026 AR-EL Hafriyat. Tüm hakları saklıdır.</div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $('#tmNav a').on('click', function() {
+        $('.navbar-collapse').removeClass('show');
+      });
+    </script>
+    <a href="#" class="scroll-top-btn" aria-label="Sayfanın en üstüne çık">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <script src="js/navbar-dropdown.js"></script>
+    <script src="js/scroll-top.js"></script>
+  </body>
+</html>
+

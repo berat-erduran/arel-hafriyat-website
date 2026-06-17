@@ -1,0 +1,745 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Altyapı Hafriyat Projesi | AR-EL İnşaat ve Hafriyat</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta
+      name="description"
+      content="AR-EL İnşaat ve Hafriyat ile kanalizasyon, drenaj, su hattı ve altyapı bağlantıları için teknik plana uygun, güvenli ve hızlı altyapı hafriyat çözümleri alın."
+    />
+    <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+    <style>
+      @media (max-width: 767px) {
+        #tmNav .navbar-collapse {
+          background: #ffffff;
+          overflow-y: auto;
+        }
+
+        #tmNav .navbar-nav {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+        }
+
+        #tmNav .nav-item {
+          display: block;
+          width: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link,
+        #tmNav .navbar-collapse .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          color: #111111;
+          font-size: 17px;
+          font-weight: 700;
+          padding: 12px 4px;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-submenu {
+          display: none;
+          position: static;
+          min-width: 100%;
+          margin: 4px 0 12px;
+          padding: 4px 0 4px 14px;
+          background: transparent;
+          border: 0;
+          border-left: 2px solid rgba(216, 161, 6, 0.24);
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+
+        #tmNav .tm-nav-dropdown.is-open > .tm-nav-submenu {
+          display: block;
+        }
+
+        #tmNav .tm-nav-submenu li {
+          display: block;
+          width: 100%;
+        }
+
+        #tmNav .tm-nav-submenu-link {
+          display: block;
+          color: #1f2937;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.5;
+          padding: 8px 0;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link:hover,
+        #tmNav .tm-nav-link:focus,
+        #tmNav .tm-nav-submenu-link:hover,
+        #tmNav .tm-nav-submenu-link:focus {
+          color: #d8a106;
+        }
+      }
+    </style>
+    <style>
+      .ah-page { background: #f6f7f8; }
+      .ah-container { max-width: 1240px; }
+      .ah-section { padding: 100px 0; }
+
+      .ah-section-title {
+        margin-bottom: 18px;
+        color: #151515;
+        font-size: clamp(2rem, 3.2vw, 2.85rem);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+      .ah-section-title::after {
+        content: "";
+        display: block;
+        width: 74px;
+        height: 4px;
+        margin-top: 14px;
+        border-radius: 999px;
+        background: #d8a106;
+      }
+      .ah-section-text {
+        color: #666666;
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      /* HERO */
+      .ah-hero {
+        position: relative;
+        min-height: clamp(360px, 45vh, 460px);
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        padding: 122px 0 58px;
+        background: #111111;
+      }
+      .ah-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(110deg, rgba(8,8,8,0.84) 0%, rgba(8,8,8,0.64) 48%, rgba(8,8,8,0.42) 100%),
+          url("img/hizmetler/altyapi/altyapi-hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .ah-hero-content { position: relative; z-index: 1; color: #fff; }
+      .ah-breadcrumb { margin: 0 0 10px; color: rgba(255,255,255,0.84); font-size: 0.95rem; }
+      .ah-breadcrumb a { color: #f5b400; text-decoration: none; }
+      .ah-hero-title { margin: 0; color: #fff; font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; }
+
+      /* TWO-COL GRIDS */
+      .ah-intro-grid,
+      .ah-info-grid,
+      .ah-tech-grid {
+        display: grid;
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+        gap: 34px;
+        align-items: center;
+      }
+
+      .ah-tags { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .ah-tag {
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(0,0,0,0.08);
+        background: #fff;
+        color: #1c1c1c;
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .ah-main-image,
+      .ah-info-image {
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 14px 34px rgba(0,0,0,0.13);
+      }
+      .ah-main-image img,
+      .ah-info-image img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* GALLERY */
+      .ah-gallery {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 18px;
+      }
+      .ah-gallery figure { margin: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 24px rgba(0,0,0,0.11); }
+      .ah-gallery img { width: 100%; height: 210px; object-fit: cover; display: block; transition: transform 0.35s ease; }
+      .ah-gallery figure:hover img { transform: scale(1.06); }
+
+      /* CARD GRIDS */
+      .ah-services-grid,
+      .ah-areas-grid,
+      .ah-equipment-grid,
+      .ah-why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 22px;
+      }
+
+      .ah-card,
+      .ah-area,
+      .ah-equipment,
+      .ah-why,
+      .ah-step {
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      }
+
+      .ah-card { padding: 26px 24px; transition: transform 0.26s ease, box-shadow 0.26s ease; }
+      .ah-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.12); }
+      .ah-card-icon {
+        width: 46px; height: 46px;
+        border-radius: 12px; margin-bottom: 16px;
+        display: inline-flex; align-items: center; justify-content: center;
+        color: #171717; background: #f5b400;
+      }
+      .ah-card h3 { margin-bottom: 9px; color: #111; font-size: 1.2rem; font-weight: 700; }
+      .ah-card p  { margin: 0; color: #666; font-size: 0.97rem; line-height: 1.72; }
+
+      /* INFO BLOCK */
+      .ah-info-block { background: #f3f4f5; }
+
+      /* TIMELINE */
+      .ah-timeline { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 20px; }
+      .ah-step { position: relative; padding: 28px 20px 24px; }
+      .ah-step::after {
+        content: ""; position: absolute; top: 46px; right: -10px;
+        width: 20px; height: 2px; background: rgba(216,161,6,0.55);
+      }
+      .ah-step:last-child::after { display: none; }
+      .ah-step-number {
+        width: 38px; height: 38px; margin-bottom: 14px;
+        border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+        font-size: 1rem; font-weight: 800; color: #171717; background: #f5b400;
+      }
+      .ah-step h4 { margin-bottom: 8px; color: #151515; font-size: 1.06rem; font-weight: 700; }
+      .ah-step p  { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.68; }
+
+      /* SMALL CARDS */
+      .ah-area,
+      .ah-equipment,
+      .ah-why { padding: 22px 20px; }
+      .ah-area-head,
+      .ah-equipment-head,
+      .ah-why-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+      .ah-area-head i,
+      .ah-equipment-head i,
+      .ah-why-head i {
+        width: 34px; height: 34px; border-radius: 10px;
+        display: inline-flex; align-items: center; justify-content: center;
+        color: #171717; background: rgba(245,180,0,0.25);
+      }
+      .ah-area h4,
+      .ah-equipment h4,
+      .ah-why h4 { margin: 0; color: #151515; font-size: 1.02rem; font-weight: 700; }
+      .ah-area p,
+      .ah-equipment p,
+      .ah-why p { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.7; }
+
+      /* TECH LIST */
+      .ah-tech-list { margin: 18px 0 0; padding: 0; list-style: none; }
+      .ah-tech-list li {
+        position: relative; margin-bottom: 12px;
+        padding-left: 28px; color: #4e4e4e; line-height: 1.7;
+      }
+      .ah-tech-list li::before {
+        content: "\f00c"; font-family: "Font Awesome 5 Free"; font-weight: 900;
+        position: absolute; left: 0; top: 2px; color: #d8a106;
+      }
+
+      /* CTA */
+      .ah-cta { padding: 0 0 100px; }
+      .ah-cta-inner {
+        border-radius: 20px; padding: 44px 42px;
+        background: linear-gradient(135deg, #111 0%, #1a1a1a 52%, #2b281c 100%);
+        box-shadow: 0 18px 42px rgba(0,0,0,0.22);
+      }
+      .ah-cta h3 { margin: 0 0 12px; color: #fff; font-size: clamp(1.6rem,2.9vw,2.06rem); font-weight: 800; }
+      .ah-cta p  { margin: 0; max-width: 620px; color: rgba(255,255,255,0.86); line-height: 1.75; }
+      .ah-cta-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .ah-btn {
+        min-width: 170px; padding: 13px 22px; border-radius: 999px;
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        text-decoration: none; font-weight: 700;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .ah-btn:hover { transform: translateY(-2px); text-decoration: none; }
+      .ah-btn-primary { color: #111; background: #f5b400; }
+      .ah-btn-primary:hover { color: #111; box-shadow: 0 10px 24px rgba(245,180,0,0.35); }
+      .ah-btn-outline { color: #fff; border: 1px solid rgba(255,255,255,0.32); background: rgba(255,255,255,0.05); }
+      .ah-btn-outline:hover { color: #fff; background: rgba(255,255,255,0.12); }
+
+      /* RESPONSIVE */
+      @media (max-width: 1199px) {
+        .ah-timeline { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .ah-step::after { display: none; }
+      }
+      @media (max-width: 991px) {
+        .ah-section { padding: 84px 0; }
+        .ah-intro-grid,
+        .ah-info-grid,
+        .ah-tech-grid { grid-template-columns: 1fr; }
+        .ah-services-grid,
+        .ah-areas-grid,
+        .ah-equipment-grid,
+        .ah-why-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .ah-main-image img,
+        .ah-info-image img { height: 300px; }
+      }
+      @media (max-width: 767px) {
+        .ah-hero { min-height: 360px; padding: 114px 0 46px; }
+        .ah-section { padding: 72px 0; }
+        .ah-gallery,
+        .ah-services-grid,
+        .ah-timeline,
+        .ah-areas-grid,
+        .ah-equipment-grid,
+        .ah-why-grid { grid-template-columns: 1fr; }
+        .ah-gallery img { height: 220px; }
+        .ah-cta { padding-bottom: 76px; }
+        .ah-cta-inner { padding: 32px 24px; }
+        .ah-btn { width: 100%; }
+      }
+    </style>
+  </head>
+  <body class="tm-detail-page ah-page">
+
+    <!-- NAVBAR -->
+    <header class="header-wrapper">
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <p class="top-bar-text">AR-EL İnşaat &amp; Hafriyat'a hoş geldiniz.</p>
+          <div class="top-bar-phones">
+            <a href="mailto:arelhafriyat@gmail.com"><i class="fas fa-envelope"></i> arelhafriyat@gmail.com</a>
+            <a href="tel:+905470915252"><i class="fas fa-phone-alt"></i> +90 547 091 52 52</a>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-md tm-navbar main-navbar sticky-top" id="tmNav">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="img/arel-logo.jpg" alt="AR-EL Hafriyat" class="tm-brand-logo" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars navbar-toggler-icon"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="tm-mobile-menu-head">
+        <span class="tm-mobile-menu-title">Menü</span>
+        <button type="button" class="tm-mobile-menu-close" aria-label="Menüyü Kapat">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="index.html">Anasayfa</a>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Hizmetlerimiz <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Hizmetlerimiz Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hafriyat-hizmetleri.html">Hafriyat Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="yikim.html">Yıkım Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="altyapi-hafriyat.html">Altyapı Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+            <li><a class="tm-nav-submenu-link" href="toprak-malzeme.html">Toprak ve Malzeme Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="peyzaj-cevre-duzenleme.html">Peyzaj ve Çevre Düzenleme</a></li>
+            <li><a class="tm-nav-submenu-link" href="kepce-kiralama.html">Kepçe Kiralama</a></li>
+            <li><a class="tm-nav-submenu-link" href="mini-ekipmanlar.html">Mini Ekipmanlarımız</a></li>
+            <li><a class="tm-nav-submenu-link" href="yol-acma-dolgu.html">Yol Açma ve Dolgu</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Kurumsal <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Kurumsal Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a class="tm-nav-submenu-link" href="vizyonumuz.html">Vizyonumuz</a></li>
+            <li><a class="tm-nav-submenu-link" href="misyonumuz.html">Misyonumuz</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="iletisim.html">İletişim</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    </header>
+
+    <!-- HERO -->
+    <header class="ah-hero">
+      <div class="container ah-container ah-hero-content">
+        <p class="ah-breadcrumb"><a href="index.html">Anasayfa</a> / Altyapı Hafriyat Hizmetleri</p>
+        <h1 class="ah-hero-title">Altyapı Hafriyat Hizmetleri</h1>
+      </div>
+    </header>
+
+    <!-- GİRİŞ -->
+    <section class="ah-section">
+      <div class="container ah-container">
+        <div class="ah-intro-grid">
+          <div>
+            <h2 class="ah-section-title">Profesyonel Altyapı Hafriyat Çözümleri</h2>
+            <p class="ah-section-text">
+              AR-EL İnşaat &amp; Hafriyat olarak; kanalizasyon, drenaj, su hattı ve altyapı bağlantılarına yönelik hafriyat operasyonlarını teknik plana uygun şekilde gerçekleştiriyoruz.
+              Saha şartlarını doğru analiz ederek kazı, hat hazırlığı, dolgu ve düzenleme süreçlerinde güvenli, hızlı ve kaliteli çözümler sunuyoruz.
+            </p>
+            <div class="ah-tags">
+              <span class="ah-tag">Teknik plana uygun kazı</span>
+              <span class="ah-tag">Güvenli hat hazırlığı</span>
+              <span class="ah-tag">Düzenli saha yönetimi</span>
+            </div>
+          </div>
+          <div class="ah-main-image">
+            <img src="img/hizmetler/altyapi/altyapi-hero.jpg" alt="Altyapı hafriyat projesi" />
+          </div>
+        </div>
+
+        <div class="ah-gallery">
+          <figure><img src="img/hizmetler/altyapi/altyapi-4.jpg"   alt="Kanal kazısı" /></figure>
+          <figure><img src="img/hizmetler/altyapi/altyapi-5.jpg"  alt="Drenaj hattı hazırlığı" /></figure>
+          <figure><img src="img/hizmetler/altyapi/altyapi-3.jpg"   alt="Altyapı kazı sahası" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- HİZMETLER -->
+    <section class="ah-section pt-0">
+      <div class="container ah-container">
+        <h2 class="ah-section-title">Altyapı Hafriyat Hizmetlerimiz</h2>
+        <div class="ah-services-grid">
+          <article class="ah-card">
+            <span class="ah-card-icon"><i class="fa-solid fa-water"></i></span>
+            <h3>Kanalizasyon Kazısı</h3>
+            <p>Atık su altyapısı için gerekli kanal güzergahını teknik ölçülere uygun şekilde açıyoruz.</p>
+          </article>
+          <article class="ah-card">
+            <span class="ah-card-icon"><i class="fas fa-water"></i></span>
+            <h3>Drenaj Hattı Hazırlığı</h3>
+            <p>Su tahliye ve drenaj sistemleri için zemine uygun güzergah kazısı gerçekleştiriyoruz.</p>
+          </article>
+          <article class="ah-card">
+            <span class="ah-card-icon"><i class="fas fa-tint"></i></span>
+            <h3>Su Hattı Hafriyatı</h3>
+            <p>İçme suyu ve sulama altyapısı hatları için planlı ve güvenli kazı operasyonları sunuyoruz.</p>
+          </article>
+          <article class="ah-card">
+            <span class="ah-card-icon"><i class="fas fa-route"></i></span>
+            <h3>Boru Hattı Kanal Açma</h3>
+            <p>Boru güzergahlarına uygun kanal açma ve hazırlık çalışmalarını titizlikle yürütüyoruz.</p>
+          </article>
+          <article class="ah-card">
+            <span class="ah-card-icon"><i class="fas fa-layer-group"></i></span>
+            <h3>Dolgu ve Geri Kapama</h3>
+            <p>Hat döşeme sonrası dolgu ve geri kapama işlemlerini zemin bütünlüğünü koruyarak tamamlıyoruz.</p>
+          </article>
+          <article class="ah-card">
+            <span class="ah-card-icon"><i class="fa-solid fa-layer-group"></i></span>
+            <h3>Saha Düzenleme</h3>
+            <p>Altyapı çalışması biten sahayı düzenli, temiz ve kullanıma hazır şekilde teslim ediyoruz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEDİR -->
+    <section class="ah-section ah-info-block">
+      <div class="container ah-container">
+        <div class="ah-info-grid">
+          <div>
+            <h2 class="ah-section-title">Altyapı Hafriyatı Nedir?</h2>
+            <p class="ah-section-text">
+              Altyapı hafriyatı; kanalizasyon, drenaj, su hattı, elektrik, doğalgaz gibi altyapı tesisatlarının yerleştirilmesi veya bakımı için zemin üzerinde teknik plana uygun kazı yapılması sürecidir.
+              Bu çalışmalar yalnızca toprağın açılmasını değil; doğru güzergah takibini, derinlik ve kot ölçülerine uyumu, güvenli çalışma alanı oluşturmayı ve tamamlama sonrası düzenli saha teslimatını da kapsar.
+            </p>
+          </div>
+          <div class="ah-info-image">
+            <img src="img/hizmetler/altyapi/altyapi-1.jpg" alt="Altyapı hafriyat operasyonu" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SÜREÇ -->
+    <section class="ah-section">
+      <div class="container ah-container">
+        <h2 class="ah-section-title">Altyapı Hafriyat Süreci Nasıl İlerler?</h2>
+        <div class="ah-timeline">
+          <article class="ah-step">
+            <span class="ah-step-number">1</span>
+            <h4>Keşif ve Teknik Planlama</h4>
+            <p>Saha incelenir, hat güzergahı, zemin yapısı ve kazı derinliği teknik şartnameye göre belirlenir.</p>
+          </article>
+          <article class="ah-step">
+            <span class="ah-step-number">2</span>
+            <h4>Güzergah ve Kot Belirleme</h4>
+            <p>Proje planına uygun güzergah çizilir, kot farkları hesaplanır ve ekipman planlaması yapılır.</p>
+          </article>
+          <article class="ah-step">
+            <span class="ah-step-number">3</span>
+            <h4>Kazı ve Hat Hazırlığı</h4>
+            <p>Kanal açılır, altyapı hattı döşenir; süreç boyunca iş güvenliği standartları uygulanır.</p>
+          </article>
+          <article class="ah-step">
+            <span class="ah-step-number">4</span>
+            <h4>Dolgu, Düzenleme ve Teslim</h4>
+            <p>Hat geri kapatılır, saha düzenlenir ve proje hedeflerine uygun şekilde teslim edilir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- UYGULAMA ALANLARI -->
+    <section class="ah-section pt-0">
+      <div class="container ah-container">
+        <h2 class="ah-section-title">Uygulama Alanları</h2>
+        <div class="ah-areas-grid">
+          <article class="ah-area">
+            <div class="ah-area-head"><i class="fa-solid fa-water"></i><h4>Kanalizasyon Hatları</h4></div>
+            <p>Atık su altyapısının yerleştirilmesi için kanal güzergahı kazısı ve hazırlık çalışmaları.</p>
+          </article>
+          <article class="ah-area">
+            <div class="ah-area-head"><i class="fas fa-stream"></i><h4>Drenaj Sistemleri</h4></div>
+            <p>Su tahliye hatları ve zemin kurutma sistemleri için kontrollü kazı uygulamaları.</p>
+          </article>
+          <article class="ah-area">
+            <div class="ah-area-head"><i class="fas fa-tint"></i><h4>Su Altyapı Hatları</h4></div>
+            <p>İçme suyu ve sulama bağlantıları için teknik plana uygun hat kazısı.</p>
+          </article>
+          <article class="ah-area">
+            <div class="ah-area-head"><i class="fas fa-cloud-rain"></i><h4>Yağmur Suyu Hatları</h4></div>
+            <p>Yağmur suyu tahliye güzergahları için kanal açma ve hazırlık işlemleri.</p>
+          </article>
+          <article class="ah-area">
+            <div class="ah-area-head"><i class="fa-solid fa-road"></i><h4>Şantiye Altyapı Hazırlığı</h4></div>
+            <p>Proje öncesi şantiye alanında gerekli altyapı güzergahı ve zemin hazırlığı.</p>
+          </article>
+          <article class="ah-area">
+            <div class="ah-area-head"><i class="fas fa-route"></i><h4>Boru Hattı Güzergahları</h4></div>
+            <p>Boru hattı döşeme güzergahlarında teknik ölçülere uygun kanal açma çalışmaları.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEKNİK -->
+    <section class="ah-section pt-0">
+      <div class="container ah-container">
+        <div class="ah-tech-grid">
+          <div>
+            <h2 class="ah-section-title">Teknik Plan ve Saha Şartları</h2>
+            <p class="ah-section-text">
+              Altyapı hafriyat operasyonlarında teknik plana bağlılık, doğru güzergah takibi, derinlik ve kot ölçülerine uyum büyük önem taşır.
+              AR-EL İnşaat &amp; Hafriyat olarak her kazı operasyonunu proje şartnamesine, saha koşullarına ve iş güvenliği standartlarına uygun şekilde yürütüyoruz.
+            </p>
+            <ul class="ah-tech-list">
+              <li>Proje planına uygun güzergah takibi</li>
+              <li>Hat derinliği ve kot ölçülerine uyum</li>
+              <li>Kontrollü kazı ve saha güvenliği</li>
+              <li>Çevreye duyarlı çalışma yaklaşımı</li>
+              <li>Düzenli saha kontrolü ve teslim</li>
+            </ul>
+          </div>
+          <div class="ah-info-image">
+            <img src="img/hizmetler/altyapi/altyapi-2.jpg" alt="Teknik plan ve saha hazırlığı" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EKİPMANLAR -->
+    <section class="ah-section pt-0">
+      <div class="container ah-container">
+        <h2 class="ah-section-title">Kullanılan Ekipmanlar</h2>
+        <p class="ah-section-text mb-4">Projelerimizde saha koşullarına ve iş kapsamına uygun güncel iş makineleri kullanarak güvenli ve verimli altyapı hafriyat çözümleri sunuyoruz.</p>
+        <div class="ah-equipment-grid">
+          <article class="ah-equipment">
+            <div class="ah-equipment-head"><i class="fas fa-truck-monster"></i><h4>Ekskavatör</h4></div>
+            <p>Derin kanal ve altyapı güzergahı açmada yüksek verimli kazı performansı sağlar.</p>
+          </article>
+          <article class="ah-equipment">
+            <div class="ah-equipment-head"><i class="fas fa-tractor"></i><h4>Mini Ekskavatör</h4></div>
+            <p>Dar ve hassas alanlarda kontrollü kazı imkanı sunar.</p>
+          </article>
+          <article class="ah-equipment">
+            <div class="ah-equipment-head"><i class="fa-solid fa-truck-front"></i><h4>Kepçe</h4></div>
+            <p>Dolgu ve saha düzenleme adımlarında pratik yükleme desteği verir.</p>
+          </article>
+          <article class="ah-equipment">
+            <div class="ah-equipment-head"><i class="fas fa-truck"></i><h4>Kamyon</h4></div>
+            <p>Hafriyat ve dolgu malzemesinin güvenli ve düzenli taşınmasını sağlar.</p>
+          </article>
+          <article class="ah-equipment">
+            <div class="ah-equipment-head"><i class="fas fa-route"></i><h4>Kanal Açma Ekipmanları</h4></div>
+            <p>Hat güzergahına uygun kanal hazırlığında hassas ve verimli uygulama sunar.</p>
+          </article>
+          <article class="ah-equipment">
+            <div class="ah-equipment-head"><i class="fas fa-hammer"></i><h4>Hidrolik Kırıcı</h4></div>
+            <p>Sert zemin ve beton yüzeylerde kontrollü kırma operasyonu gerçekleştirir.</p>
+          </article>
+          <article class="ah-equipment">
+            <div class="ah-equipment-head"><i class="fas fa-wrench"></i><h4>El Ekipmanları</h4></div>
+            <p>Detaylı saha düzenleme ve son kontrol aşamalarında destek sağlar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEDEN BİZ -->
+    <section class="ah-section pt-0">
+      <div class="container ah-container">
+        <h2 class="ah-section-title">Neden AR-EL İnşaat &amp; Hafriyat?</h2>
+        <div class="ah-why-grid">
+          <article class="ah-why">
+            <div class="ah-why-head"><i class="fas fa-clipboard-check"></i><h4>Teknik Plana Uygunluk</h4></div>
+            <p>Tüm kazı operasyonlarını proje şartnamesine ve teknik ölçülere tam uyumla yürütüyoruz.</p>
+          </article>
+          <article class="ah-why">
+            <div class="ah-why-head"><i class="fas fa-users"></i><h4>Deneyimli Operatörler</h4></div>
+            <p>Uzman operatör kadromuzla sahada hızlı, kontrollü ve güvenli ilerleme sağlıyoruz.</p>
+          </article>
+          <article class="ah-why">
+            <div class="ah-why-head"><i class="fas fa-shield-alt"></i><h4>Güvenli Kazı Operasyonu</h4></div>
+            <p>İş güvenliği standartlarını tüm süreç boyunca öncelik haline getiriyoruz.</p>
+          </article>
+          <article class="ah-why">
+            <div class="ah-why-head"><i class="fas fa-cogs"></i><h4>Modern Makine Parkı</h4></div>
+            <p>Farklı saha şartlarına uygun güncel ekipman altyapısıyla güçlü çözümler sunuyoruz.</p>
+          </article>
+          <article class="ah-why">
+            <div class="ah-why-head"><i class="fas fa-sitemap"></i><h4>Düzenli Saha Yönetimi</h4></div>
+            <p>Saha düzeni, kontrol adımları ve teslim sürecini sistematik şekilde yönetiyoruz.</p>
+          </article>
+          <article class="ah-why">
+            <div class="ah-why-head"><i class="fas fa-clock"></i><h4>Zamanında Teslimat</h4></div>
+            <p>Planlı süreç yönetimiyle altyapı sahalarını proje takvimine uygun teslim ediyoruz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="ah-cta">
+      <div class="container ah-container">
+        <div class="ah-cta-inner">
+          <h3>Altyapı Hafriyat Projesi İçin Teklif Alın</h3>
+          <p>Kanalizasyon, drenaj ve altyapı hatları için profesyonel ekibimizden hızlı teklif alın.</p>
+          <div class="ah-cta-actions">
+            <a href="iletisim.html" class="ah-btn ah-btn-primary"><i class="fas fa-phone-alt"></i> İletişime Geç</a>
+            <a href="https://wa.me/905470915252?text=Merhabalar,%20bilgi%20alabilir%20miyim?" class="ah-btn ah-btn-outline" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="tm-site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4>AR-EL Hafriyat</h4>
+            <p>Hafriyat, kazı, yıkım, dolgu ve iş makinesi kiralama alanlarında profesyonel çözümler sunuyoruz.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+              <li><a href="index.html#infinite">Anasayfa</a></li>
+              <li><a href="index.html#whatwedo">Hizmetlerimiz</a></li>
+              <li><a href="index.html#gallery">Kurumsal</a></li>
+              <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>Hizmetler</h4>
+            <ul>
+              <li><a href="hafriyat-hizmetleri.html">Hafriyat</a></li>
+              <li><a href="yikim.html">Yıkım</a></li>
+              <li><a href="yikim.html">Moloz Taşıma</a></li>
+              <li><a href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+              <li><a href="altyapi-hafriyat.html">Altyapı Kazı</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>İletişim</h4>
+            <ul>
+              <li>+90 547 091 52 52</li>
+              <li>arelhafriyat@gmail.com</li>
+              <li><a href="https://www.instagram.com/arelhafriyat" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> @arelhafriyat</a></li>
+              <li>İstanbul, Türkiye</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tm-footer-bottom">&copy; 2026 AR-EL Hafriyat. Tüm hakları saklıdır.</div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $('#tmNav a').on('click', function () {
+        $('.navbar-collapse').removeClass('show');
+      });
+    </script>
+      <a href="#" class="scroll-top-btn" aria-label="Sayfanın en üstüne çık">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <script src="js/navbar-dropdown.js"></script>
+    <script src="js/scroll-top.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

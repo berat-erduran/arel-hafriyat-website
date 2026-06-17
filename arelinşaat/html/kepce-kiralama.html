@@ -1,0 +1,818 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kepçe Kiralama | AR-EL İnşaat & Hafriyat</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta
+      name="description"
+      content="AR-EL İnşaat & Hafriyat kepçe kiralama çözümleri ile kazı, yükleme, dolgu ve saha düzenleme işlerinde hızlı, güvenli ve profesyonel hizmet sunar."
+    />
+    <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+    <style>
+      @media (max-width: 767px) {
+        #tmNav .navbar-collapse {
+          background: #ffffff;
+          overflow-y: auto;
+        }
+
+        #tmNav .navbar-nav {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+        }
+
+        #tmNav .nav-item {
+          display: block;
+          width: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link,
+        #tmNav .navbar-collapse .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          color: #111111;
+          font-size: 17px;
+          font-weight: 700;
+          padding: 12px 4px;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-submenu {
+          display: none;
+          position: static;
+          min-width: 100%;
+          margin: 4px 0 12px;
+          padding: 4px 0 4px 14px;
+          background: transparent;
+          border: 0;
+          border-left: 2px solid rgba(216, 161, 6, 0.24);
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+
+        #tmNav .tm-nav-dropdown.is-open > .tm-nav-submenu {
+          display: block;
+        }
+
+        #tmNav .tm-nav-submenu li {
+          display: block;
+          width: 100%;
+        }
+
+        #tmNav .tm-nav-submenu-link {
+          display: block;
+          color: #1f2937;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.5;
+          padding: 8px 0;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link:hover,
+        #tmNav .tm-nav-link:focus,
+        #tmNav .tm-nav-submenu-link:hover,
+        #tmNav .tm-nav-submenu-link:focus {
+          color: #d8a106;
+        }
+      }
+    </style>
+    <style>
+      .mk-page { background: #f6f7f8; }
+      .mk-container { max-width: 1240px; }
+      .mk-section { padding: 100px 0; }
+
+      .mk-section-title {
+        margin-bottom: 18px;
+        color: #151515;
+        font-size: clamp(2rem, 3.2vw, 2.8rem);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+      .mk-section-title::after {
+        content: "";
+        display: block;
+        width: 72px;
+        height: 4px;
+        margin-top: 14px;
+        border-radius: 999px;
+        background: #d8a106;
+      }
+      .mk-section-text {
+        color: #666666;
+        font-size: 1.05rem;
+        line-height: 1.82;
+      }
+
+      .mk-hero {
+        position: relative;
+        min-height: clamp(360px, 45vh, 460px);
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        padding: 122px 0 58px;
+        background: #111111;
+      }
+      .mk-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(110deg, rgba(9,9,9,0.84) 0%, rgba(9,9,9,0.64) 46%, rgba(9,9,9,0.4) 100%), url("img/hizmetler/kepce-kiralama/kepce-kiralama-hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .mk-hero-content {
+        position: relative;
+        z-index: 1;
+        color: #ffffff;
+      }
+      .mk-breadcrumb {
+        margin: 0 0 10px;
+        font-size: 0.95rem;
+        color: rgba(255,255,255,0.84);
+      }
+      .mk-breadcrumb a {
+        color: #f5b400;
+        text-decoration: none;
+      }
+      .mk-hero-title {
+        margin: 0;
+        color: #ffffff;
+        font-size: clamp(2.1rem, 4.9vw, 3.3rem);
+        font-weight: 800;
+      }
+
+      .mk-intro-grid,
+      .mk-info-grid,
+      .mk-adv-grid {
+        display: grid;
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+        gap: 34px;
+        align-items: center;
+      }
+
+      .mk-tags {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .mk-tag {
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(0,0,0,0.08);
+        background: #ffffff;
+        color: #1c1c1c;
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .mk-main-image,
+      .mk-info-image {
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 14px 34px rgba(0,0,0,0.13);
+      }
+      .mk-main-image img,
+      .mk-info-image img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .mk-gallery {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 18px;
+      }
+      .mk-gallery figure {
+        margin: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.11);
+      }
+      .mk-gallery img {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s ease;
+      }
+      .mk-gallery figure:hover img { transform: scale(1.06); }
+
+      .mk-services-grid,
+      .mk-areas-grid,
+      .mk-equipment-grid,
+      .mk-why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 22px;
+      }
+
+      .mk-card,
+      .mk-area,
+      .mk-equipment,
+      .mk-why,
+      .mk-step {
+        border-radius: 16px;
+        background: #ffffff;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      }
+
+      .mk-card {
+        padding: 26px 24px;
+        transition: transform 0.26s ease, box-shadow 0.26s ease;
+      }
+      .mk-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+      }
+      .mk-card-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #171717;
+        background: #f5b400;
+        font-size: 1rem;
+      }
+      .mk-card h3 {
+        margin-bottom: 9px;
+        color: #111111;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      .mk-card p {
+        margin: 0;
+        color: #666666;
+        font-size: 0.97rem;
+        line-height: 1.72;
+      }
+
+      .mk-info-block { background: #f3f4f5; }
+
+      .mk-timeline {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0,1fr));
+        gap: 20px;
+      }
+      .mk-step {
+        position: relative;
+        padding: 28px 20px 24px;
+      }
+      .mk-step::after {
+        content: "";
+        position: absolute;
+        top: 46px;
+        right: -10px;
+        width: 20px;
+        height: 2px;
+        background: rgba(216,161,6,0.55);
+      }
+      .mk-step:last-child::after { display: none; }
+      .mk-step-number {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 14px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 800;
+        color: #171717;
+        background: #f5b400;
+      }
+      .mk-step h4 {
+        margin-bottom: 8px;
+        color: #151515;
+        font-size: 1.06rem;
+        font-weight: 700;
+      }
+      .mk-step p {
+        margin: 0;
+        color: #666666;
+        font-size: 0.95rem;
+        line-height: 1.68;
+      }
+
+      .mk-area,
+      .mk-equipment,
+      .mk-why {
+        padding: 22px 20px;
+      }
+      .mk-area-head,
+      .mk-equipment-head,
+      .mk-why-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .mk-area-head i,
+      .mk-equipment-head i,
+      .mk-why-head i {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #171717;
+        background: rgba(245,180,0,0.25);
+      }
+      .mk-area h4,
+      .mk-equipment h4,
+      .mk-why h4 {
+        margin: 0;
+        color: #151515;
+        font-size: 1.02rem;
+        font-weight: 700;
+      }
+      .mk-area p,
+      .mk-equipment p,
+      .mk-why p {
+        margin: 0;
+        color: #666666;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      .mk-adv-list {
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .mk-adv-list li {
+        position: relative;
+        margin-bottom: 12px;
+        padding-left: 28px;
+        color: #4e4e4e;
+        line-height: 1.7;
+      }
+      .mk-adv-list li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: #d8a106;
+      }
+
+      .mk-cta { padding: 0 0 100px; }
+      .mk-cta-inner {
+        border-radius: 20px;
+        padding: 44px 42px;
+        background: linear-gradient(135deg, #111111 0%, #1a1a1a 52%, #2b281c 100%);
+        box-shadow: 0 18px 42px rgba(0,0,0,0.22);
+      }
+      .mk-cta h3 {
+        margin: 0 0 12px;
+        color: #ffffff;
+        font-size: clamp(1.6rem, 2.9vw, 2.06rem);
+        font-weight: 800;
+      }
+      .mk-cta p {
+        margin: 0;
+        max-width: 620px;
+        color: rgba(255,255,255,0.86);
+        line-height: 1.75;
+      }
+      .mk-cta-actions {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .mk-btn {
+        min-width: 170px;
+        padding: 13px 22px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .mk-btn:hover {
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+      .mk-btn-primary {
+        color: #111111;
+        background: #f5b400;
+      }
+      .mk-btn-primary:hover {
+        color: #111111;
+        box-shadow: 0 10px 24px rgba(245,180,0,0.35);
+      }
+      .mk-btn-outline {
+        color: #ffffff;
+        border: 1px solid rgba(255,255,255,0.32);
+        background: rgba(255,255,255,0.05);
+      }
+      .mk-btn-outline:hover {
+        color: #ffffff;
+        background: rgba(255,255,255,0.12);
+      }
+
+      @media (max-width: 1199px) {
+        .mk-timeline { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .mk-step::after { display: none; }
+      }
+      @media (max-width: 991px) {
+        .mk-section { padding: 84px 0; }
+        .mk-intro-grid,
+        .mk-info-grid,
+        .mk-adv-grid { grid-template-columns: 1fr; }
+        .mk-services-grid,
+        .mk-areas-grid,
+        .mk-equipment-grid,
+        .mk-why-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .mk-main-image img,
+        .mk-info-image img { height: 320px; }
+      }
+      @media (max-width: 767px) {
+        .mk-hero { min-height: 360px; padding: 114px 0 46px; }
+        .mk-section { padding: 72px 0; }
+        .mk-gallery,
+        .mk-services-grid,
+        .mk-timeline,
+        .mk-areas-grid,
+        .mk-equipment-grid,
+        .mk-why-grid { grid-template-columns: 1fr; }
+        .mk-gallery img { height: 220px; }
+        .mk-cta { padding-bottom: 76px; }
+        .mk-cta-inner { padding: 32px 24px; }
+        .mk-btn { width: 100%; }
+      }
+    </style>
+  </head>
+  <body class="tm-detail-page mk-page">
+    <header class="header-wrapper">
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <p class="top-bar-text">AR-EL İnşaat &amp; Hafriyat'a hoş geldiniz.</p>
+          <div class="top-bar-phones">
+            <a href="mailto:arelhafriyat@gmail.com"><i class="fas fa-envelope"></i> arelhafriyat@gmail.com</a>
+            <a href="tel:+905470915252"><i class="fas fa-phone-alt"></i> +90 547 091 52 52</a>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-md tm-navbar main-navbar sticky-top" id="tmNav">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="img/arel-logo.jpg" alt="AR-EL Hafriyat" class="tm-brand-logo" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars navbar-toggler-icon"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="tm-mobile-menu-head">
+        <span class="tm-mobile-menu-title">Menü</span>
+        <button type="button" class="tm-mobile-menu-close" aria-label="Menüyü Kapat">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="index.html">Anasayfa</a>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Hizmetlerimiz <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Hizmetlerimiz Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hafriyat-hizmetleri.html">Hafriyat Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="yikim.html">Yıkım Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="altyapi-hafriyat.html">Altyapı Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+            <li><a class="tm-nav-submenu-link" href="toprak-malzeme.html">Toprak ve Malzeme Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="peyzaj-cevre-duzenleme.html">Peyzaj ve Çevre Düzenleme</a></li>
+            <li><a class="tm-nav-submenu-link" href="kepce-kiralama.html">Kepçe Kiralama</a></li>
+            <li><a class="tm-nav-submenu-link" href="mini-ekipmanlar.html">Mini Ekipmanlarımız</a></li>
+            <li><a class="tm-nav-submenu-link" href="yol-acma-dolgu.html">Yol Açma ve Dolgu</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Kurumsal <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Kurumsal Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a class="tm-nav-submenu-link" href="vizyonumuz.html">Vizyonumuz</a></li>
+            <li><a class="tm-nav-submenu-link" href="misyonumuz.html">Misyonumuz</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="iletisim.html">İletişim</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    </header>
+
+    <header class="mk-hero">
+      <div class="container mk-container mk-hero-content">
+        <p class="mk-breadcrumb"><a href="index.html">Anasayfa</a> / Kepçe Kiralama</p>
+        <h1 class="mk-hero-title">Kepçe Kiralama</h1>
+      </div>
+    </header>
+
+    <section class="mk-section">
+      <div class="container mk-container">
+        <div class="mk-intro-grid">
+          <div>
+            <h2 class="mk-section-title">Profesyonel Kepçe Kiralama Çözümleri</h2>
+            <p class="mk-section-text">
+              AR-EL İnşaat &amp; Hafriyat olarak; dar alan kazıları, bahçe düzenleme, küçük ölçekli hafriyat, altyapı hazırlığı ve saha temizliği gibi işlemlerde kepçe filomuzla hızlı, güçlü ve güvenli çözümler sunuyoruz.
+              Operatörlü veya operatörsüz kiralama seçeneklerimizle farklı ölçeklerdeki projelerde verimli çalışma imkanı sağlıyoruz.
+            </p>
+            <div class="mk-tags">
+              <span class="mk-tag">Kazı ve yükleme desteği</span>
+              <span class="mk-tag">Güçlü makine parkuru</span>
+              <span class="mk-tag">Operatörlü kiralama seçeneği</span>
+            </div>
+          </div>
+          <div class="mk-main-image">
+            <img src="img/hizmetler/kepce-kiralama/kepce-kiralama-1.jpg" alt="Kepçe ile saha çalışması" />
+          </div>
+        </div>
+
+        <div class="mk-gallery">
+          <figure><img src="img/hizmetler/kepce-kiralama/kepce-kiralama-hero.jpg" alt="Kepçe kiralama çalışma sahası" /></figure>
+          <figure><img src="img/hizmetler/kepce-kiralama/kepce-kiralama-1.jpg" alt="Kepçe uygulaması" /></figure>
+          <figure><img src="img/hizmetler/kepce-kiralama/kepce-kiralama-2.jpg" alt="Kepçe saha düzenlemesi" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="mk-section pt-0">
+      <div class="container mk-container">
+        <h2 class="mk-section-title">Kepçe Kiralama Hizmetlerimiz</h2>
+        <div class="mk-services-grid">
+          <article class="mk-card">
+            <span class="mk-card-icon"><i class="fa-solid fa-truck-front"></i></span>
+            <h3>Mini Kepçe Hizmeti</h3>
+            <p>Dar alanlarda kazı, yükleme ve saha düzenleme işlemleri için mini kepçe çözümleri sunuyoruz.</p>
+          </article>
+          <article class="mk-card">
+            <span class="mk-card-icon"><i class="fas fa-truck-monster"></i></span>
+            <h3>Mini Ekskavatör Hizmeti</h3>
+            <p>Temel, kanal, drenaj ve küçük ölçekli kazı çalışmalarında mini ekskavatörlerle hassas uygulamalar yapıyoruz.</p>
+          </article>
+          <article class="mk-card">
+            <span class="mk-card-icon"><i class="fas fa-tree"></i></span>
+            <h3>Bahçe ve Peyzaj Hazırlığı</h3>
+            <p>Bahçe, çevre düzenleme ve peyzaj öncesi zemin hazırlığı işlemlerini pratik şekilde gerçekleştiriyoruz.</p>
+          </article>
+          <article class="mk-card">
+            <span class="mk-card-icon"><i class="fas fa-drafting-compass"></i></span>
+            <h3>Dar Alan Kazısı</h3>
+            <p>Büyük iş makinelerinin giremediği alanlarda kontrollü ve güvenli kazı operasyonları yürütüyoruz.</p>
+          </article>
+          <article class="mk-card">
+            <span class="mk-card-icon"><i class="fa-solid fa-person-digging"></i></span>
+            <h3>Küçük Ölçekli Hafriyat</h3>
+            <p>Ev, iş yeri, bahçe ve küçük şantiye alanlarında ihtiyaç duyulan hafriyat işlemlerini tamamlıyoruz.</p>
+          </article>
+          <article class="mk-card">
+            <span class="mk-card-icon"><i class="fas fa-broom"></i></span>
+            <h3>Saha Temizliği ve Düzenleme</h3>
+            <p>Çalışma sonrası alanı temiz, düzenli ve kullanıma hazır hale getiriyoruz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mk-section mk-info-block">
+      <div class="container mk-container">
+        <div class="mk-info-grid">
+          <div>
+            <h2 class="mk-section-title">Kepçe Kiralama Nedir?</h2>
+            <p class="mk-section-text">
+              Mini ekipmanlar; dar alanlarda, küçük ölçekli projelerde ve hassas saha uygulamalarında kullanılan kompakt iş makineleridir.
+              Mini kepçe ve mini ekskavatör gibi makineler, büyük araçların çalışmasının zor olduğu alanlarda kazı, dolgu, yükleme, düzenleme ve temizlik işlemlerini daha pratik hale getirir.
+              Bu ekipmanlar özellikle bahçe, altyapı, tadilat ve küçük şantiye çalışmalarında tercih edilir.
+            </p>
+          </div>
+          <div class="mk-info-image">
+            <img src="img/hizmetler/kepce-kiralama/kepce-kiralama-hero.jpg" alt="Mini ekipman genel görünümü" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mk-section">
+      <div class="container mk-container">
+        <h2 class="mk-section-title">Kepçe Kiralama Süreci Nasıl İlerler?</h2>
+        <div class="mk-timeline">
+          <article class="mk-step">
+            <span class="mk-step-number">1</span>
+            <h4>Keşif ve İhtiyaç Analizi</h4>
+            <p>Çalışma alanı incelenir, yapılacak işin kapsamı ve kullanılacak ekipman belirlenir.</p>
+          </article>
+          <article class="mk-step">
+            <span class="mk-step-number">2</span>
+            <h4>Ekipman ve Operatör Planlama</h4>
+            <p>Alan koşullarına en uygun mini ekipman ve operatör planlaması yapılır.</p>
+          </article>
+          <article class="mk-step">
+            <span class="mk-step-number">3</span>
+            <h4>Uygulama</h4>
+            <p>Kazı, yükleme, düzenleme veya temizlik işlemleri kontrollü şekilde gerçekleştirilir.</p>
+          </article>
+          <article class="mk-step">
+            <span class="mk-step-number">4</span>
+            <h4>Saha Teslimi</h4>
+            <p>Çalışma alanı kontrol edilir, düzenlenir ve kullanıma hazır şekilde teslim edilir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mk-section pt-0">
+      <div class="container mk-container">
+        <h2 class="mk-section-title">Kepçe Kiralama Kullanım Alanları</h2>
+        <div class="mk-areas-grid">
+          <article class="mk-area"><div class="mk-area-head"><i class="fas fa-seedling"></i><h4>Bahçe Düzenleme</h4></div><p>Peyzaj ve çevre düzenleme öncesi zemin hazırlığı çalışmalarında kullanılır.</p></article>
+          <article class="mk-area"><div class="mk-area-head"><i class="fas fa-map-marked-alt"></i><h4>Dar Alan Kazıları</h4></div><p>Büyük makinelerin giremediği alanlarda kontrollü kazı imkanı sağlar.</p></article>
+          <article class="mk-area"><div class="mk-area-head"><i class="fas fa-ruler-combined"></i><h4>Küçük Temel Kazıları</h4></div><p>Küçük yapı ve ek bina projelerinde temel hazırlığı için tercih edilir.</p></article>
+          <article class="mk-area"><div class="mk-area-head"><i class="fas fa-water"></i><h4>Kanal ve Drenaj Hazırlığı</h4></div><p>Su, drenaj ve altyapı hatları için dar kanal açma işlemlerinde kullanılır.</p></article>
+          <article class="mk-area"><div class="mk-area-head"><i class="fas fa-brush"></i><h4>Tadilat Sonrası Temizlik</h4></div><p>Tadilat ve yıkım sonrası küçük ölçekli moloz ve saha temizliği yapılır.</p></article>
+          <article class="mk-area"><div class="mk-area-head"><i class="fa-solid fa-helmet-safety"></i><h4>Küçük Şantiye İşleri</h4></div><p>Pratik ekipman ihtiyacı olan küçük projelerde hızlı çözüm sağlar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mk-section pt-0">
+      <div class="container mk-container">
+        <div class="mk-adv-grid">
+          <div>
+            <h2 class="mk-section-title">Kepçe Kiralamanın Avantajları</h2>
+            <p class="mk-section-text">
+              Mini ekipmanlar, dar alanlarda hızlı hareket edebilmesi ve hassas uygulama imkanı sunması sayesinde küçük ve orta ölçekli projelerde büyük kolaylık sağlar.
+            </p>
+            <ul class="mk-adv-list">
+              <li>Dar alanlarda rahat çalışma</li>
+              <li>Daha hızlı uygulama</li>
+              <li>Daha az alan hasarı</li>
+              <li>Hassas kazı ve düzenleme</li>
+              <li>Pratik yükleme ve temizlik</li>
+              <li>Küçük projeler için ekonomik çözüm</li>
+            </ul>
+          </div>
+          <div class="mk-info-image">
+            <img src="img/hizmetler/kepce-kiralama/kepce-kiralama-3.jpg" alt="Dar alanda kepçe avantajı" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mk-section pt-0">
+      <div class="container mk-container">
+        <h2 class="mk-section-title">Kiralık Kepçe Seçeneklerimiz</h2>
+        <p class="mk-section-text mb-4">Projelerimizde alanın yapısına ve işin ihtiyacına göre uygun mini ekipmanları kullanarak güvenli ve verimli çözümler sunuyoruz.</p>
+        <div class="mk-equipment-grid">
+          <article class="mk-equipment"><div class="mk-equipment-head"><i class="fa-solid fa-truck-front"></i><h4>Mini kepçe</h4></div><p>Dar saha koşullarında kazı ve düzenleme işlemleri için ideal çözümdür.</p></article>
+          <article class="mk-equipment"><div class="mk-equipment-head"><i class="fas fa-truck-monster"></i><h4>Mini ekskavatör</h4></div><p>Kanal, temel ve noktasal kazı çalışmalarında hassas uygulama sağlar.</p></article>
+          <article class="mk-equipment"><div class="mk-equipment-head"><i class="fas fa-dolly"></i><h4>Mini yükleyici</h4></div><p>Malzeme taşıma ve saha içi yükleme süreçlerinde pratik kullanım sunar.</p></article>
+          <article class="mk-equipment"><div class="mk-equipment-head"><i class="fas fa-hammer"></i><h4>Hidrolik kırıcı ataşman</h4></div><p>Sert zemin ve beton parçalama işlemlerinde kontrollü destek verir.</p></article>
+          <article class="mk-equipment"><div class="mk-equipment-head"><i class="fas fa-route"></i><h4>Dar alan kazı ekipmanları</h4></div><p>Kısıtlı geçişlerde güvenli ve verimli kazı operasyonu sağlar.</p></article>
+          <article class="mk-equipment"><div class="mk-equipment-head"><i class="fas fa-truck-loading"></i><h4>Küçük taşıma ekipmanları</h4></div><p>Küçük ölçekli projelerde malzeme transferini hızlı şekilde gerçekleştirir.</p></article>
+          <article class="mk-equipment"><div class="mk-equipment-head"><i class="fas fa-wrench"></i><h4>El ekipmanları</h4></div><p>Detaylı saha düzenleme, son kontrol ve hassas uygulamalarda kullanılır.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mk-section pt-0">
+      <div class="container mk-container">
+        <h2 class="mk-section-title">Neden AR-EL İnşaat &amp; Hafriyat?</h2>
+        <div class="mk-why-grid">
+          <article class="mk-why"><div class="mk-why-head"><i class="fas fa-map"></i><h4>Dar Alan Deneyimi</h4></div><p>Dar alan operasyonlarında edinilen saha tecrübemizle kontrollü ilerleme sağlıyoruz.</p></article>
+          <article class="mk-why"><div class="mk-why-head"><i class="fas fa-sliders-h"></i><h4>Uygun Ekipman Seçimi</h4></div><p>Her projede işin kapsamına en uygun mini ekipmanı planlı şekilde belirliyoruz.</p></article>
+          <article class="mk-why"><div class="mk-why-head"><i class="fas fa-users"></i><h4>Deneyimli Operatörler</h4></div><p>Uzman operatör kadromuzla güvenli, hassas ve verimli saha uygulamaları sunuyoruz.</p></article>
+          <article class="mk-why"><div class="mk-why-head"><i class="fas fa-bolt"></i><h4>Hızlı Uygulama</h4></div><p>Doğru ekipman ve planlama ile iş süreçlerini gereksiz gecikme olmadan tamamlıyoruz.</p></article>
+          <article class="mk-why"><div class="mk-why-head"><i class="fas fa-check-circle"></i><h4>Temiz Saha Teslimi</h4></div><p>Uygulama sonrası alanı düzenleyerek kullanıma hazır ve temiz şekilde teslim ediyoruz.</p></article>
+          <article class="mk-why"><div class="mk-why-head"><i class="fas fa-shield-alt"></i><h4>Güvenilir Hizmet</h4></div><p>Kalite, iş güvenliği ve müşteri memnuniyetini her projede temel öncelik kabul ediyoruz.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mk-cta">
+      <div class="container mk-container">
+        <div class="mk-cta-inner">
+          <h3>Kepçe Kiralama Hizmeti İçin Teklif Alın</h3>
+          <p>Kazı, yükleme, dolgu ve saha düzenleme ihtiyaçlarınız için profesyonel ekibimizden hızlı teklif alın.</p>
+          <div class="mk-cta-actions">
+            <a href="iletisim.html" class="mk-btn mk-btn-primary"><i class="fas fa-phone-alt"></i> İletişime Geç</a>
+            <a href="https://wa.me/905470915252?text=Merhabalar,%20bilgi%20alabilir%20miyim?" class="mk-btn mk-btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="tm-site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4>AR-EL Hafriyat</h4>
+            <p>Hafriyat, kazı, yıkım, dolgu ve iş makinesi kiralama alanlarında profesyonel çözümler sunuyoruz.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+              <li><a href="index.html#infinite">Anasayfa</a></li>
+              <li><a href="index.html#whatwedo">Hizmetlerimiz</a></li>
+              <li><a href="index.html#gallery">Kurumsal</a></li>
+              <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>Hizmetler</h4>
+            <ul>
+              <li><a href="hafriyat-hizmetleri.html">Hafriyat</a></li>
+              <li><a href="yikim.html">Yıkım</a></li>
+              <li><a href="yikim.html">Moloz Taşıma</a></li>
+              <li><a href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+              <li><a href="kepce-kiralama.html">Kepçe Kiralama</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>İletişim</h4>
+            <ul>
+              <li>+90 547 091 52 52</li>
+              <li>arelhafriyat@gmail.com</li>
+              <li><a href="https://www.instagram.com/arelhafriyat" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> @arelhafriyat</a></li>
+              <li>İstanbul, Türkiye</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tm-footer-bottom">&copy; 2026 AR-EL Hafriyat. Tüm hakları saklıdır.</div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $('#tmNav a').on('click', function() {
+        $('.navbar-collapse').removeClass('show');
+      });
+    </script>
+      <a href="#" class="scroll-top-btn" aria-label="Sayfanın en üstüne çık">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <script src="js/navbar-dropdown.js"></script>
+    <script src="js/scroll-top.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

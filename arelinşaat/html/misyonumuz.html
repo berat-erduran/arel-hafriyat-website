@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Misyonumuz | AR-EL İnşaat ve Hafriyat</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta
+      name="description"
+      content="AR-EL İnşaat ve Hafriyat misyonunu keşfedin. Hafriyat, yıkım, altyapı ve saha düzenleme süreçlerinde planlı, güvenli ve kaliteli hizmet anlayışımızı inceleyin."
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+    <style>
+      @media (max-width: 767px) {
+        #tmNav .navbar-collapse {
+          background: #ffffff;
+          overflow-y: auto;
+        }
+
+        #tmNav .navbar-nav {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+        }
+
+        #tmNav .nav-item {
+          display: block;
+          width: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link,
+        #tmNav .navbar-collapse .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          color: #111111;
+          font-size: 17px;
+          font-weight: 700;
+          padding: 12px 4px;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-submenu {
+          display: none;
+          position: static;
+          min-width: 100%;
+          margin: 4px 0 12px;
+          padding: 4px 0 4px 14px;
+          background: transparent;
+          border: 0;
+          border-left: 2px solid rgba(216, 161, 6, 0.24);
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+
+        #tmNav .tm-nav-dropdown.is-open > .tm-nav-submenu {
+          display: block;
+        }
+
+        #tmNav .tm-nav-submenu li {
+          display: block;
+          width: 100%;
+        }
+
+        #tmNav .tm-nav-submenu-link {
+          display: block;
+          color: #1f2937;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.5;
+          padding: 8px 0;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link:hover,
+        #tmNav .tm-nav-link:focus,
+        #tmNav .tm-nav-submenu-link:hover,
+        #tmNav .tm-nav-submenu-link:focus {
+          color: #d8a106;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      .ms-hero {
+        position: relative;
+        min-height: clamp(320px, 48vh, 430px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+        background: #0f1115;
+        overflow: hidden;
+      }
+
+      .ms-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("img/heroresim-ornek1.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .ms-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.62) 100%);
+      }
+
+      .ms-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 860px;
+        padding: 0 20px;
+      }
+
+      .ms-hero h1 {
+        margin: 0 0 14px;
+        color: #ffffff;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .ms-hero p {
+        margin: 0 auto;
+        max-width: 760px;
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.04rem;
+        line-height: 1.75;
+      }
+
+      .ms-section {
+        padding: 78px 0;
+      }
+
+      .ms-content-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 30px;
+        align-items: stretch;
+      }
+
+      .ms-card {
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: 0 14px 34px rgba(17, 17, 17, 0.09);
+        padding: 34px 34px 32px;
+      }
+
+      .ms-card h2 {
+        margin: 0 0 18px;
+        color: #131313;
+        font-size: clamp(1.7rem, 3vw, 2.2rem);
+        font-weight: 800;
+      }
+
+      .ms-card p {
+        margin: 0 0 16px;
+        color: #505050;
+        line-height: 1.85;
+        font-size: 1rem;
+      }
+
+      .ms-media {
+        overflow: hidden;
+        border-radius: 18px;
+        box-shadow: 0 14px 34px rgba(17, 17, 17, 0.12);
+        background: #f3f3f3;
+      }
+
+      .ms-media img {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .ms-title {
+        margin: 0 0 14px;
+        color: #141414;
+        font-size: clamp(1.9rem, 3.6vw, 2.5rem);
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .ms-title-line {
+        width: 72px;
+        height: 4px;
+        border-radius: 99px;
+        background: #d8a106;
+        margin: 0 auto 28px;
+      }
+
+      .ms-principles {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .ms-principle-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 24px 22px;
+        box-shadow: 0 12px 30px rgba(17, 17, 17, 0.08);
+        border: 1px solid rgba(17, 17, 17, 0.05);
+      }
+
+      .ms-principle-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        background: rgba(216, 161, 6, 0.15);
+        color: #b98905;
+        margin-bottom: 14px;
+      }
+
+      .ms-principle-card h3 {
+        margin: 0 0 10px;
+        color: #151515;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .ms-principle-card p {
+        margin: 0;
+        color: #565656;
+        line-height: 1.75;
+        font-size: 0.96rem;
+      }
+
+      .ms-workflow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .ms-workflow-card {
+        border-radius: 16px;
+        padding: 26px 24px;
+        background: linear-gradient(160deg, #111111 0%, #1a1e25 100%);
+        color: #ffffff;
+      }
+
+      .ms-workflow-card h3 {
+        margin: 0 0 10px;
+        color: #f3be33;
+        font-size: 1.15rem;
+        font-weight: 700;
+      }
+
+      .ms-workflow-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        font-size: 0.97rem;
+      }
+
+      .ms-cta {
+        padding: 0 0 76px;
+      }
+
+      .ms-cta-inner {
+        border-radius: 18px;
+        background: linear-gradient(145deg, #0f1115 0%, #1b1f27 100%);
+        color: #ffffff;
+        padding: 40px 36px;
+        box-shadow: 0 18px 40px rgba(15, 15, 15, 0.2);
+      }
+
+      .ms-cta-inner h2 {
+        margin: 0 0 10px;
+        color: #ffffff;
+        font-size: clamp(1.6rem, 3vw, 2rem);
+        font-weight: 800;
+      }
+
+      .ms-cta-inner p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .ms-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 18px;
+        background: #d8a106;
+        color: #111111;
+        border-radius: 999px;
+        border: 1px solid #d8a106;
+        min-height: 46px;
+        padding: 12px 26px;
+        font-weight: 800;
+        font-size: 0.95rem;
+      }
+
+      .ms-cta-btn:hover,
+      .ms-cta-btn:focus {
+        background: #ebb31c;
+        border-color: #ebb31c;
+        color: #111111;
+      }
+
+      @media (max-width: 991px) {
+        .ms-content-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .ms-principles {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .ms-workflow {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .ms-hero {
+          min-height: 300px;
+        }
+
+        .ms-hero p {
+          font-size: 0.95rem;
+          line-height: 1.7;
+        }
+
+        .ms-section {
+          padding: 62px 0;
+        }
+
+        .ms-card {
+          padding: 26px 22px 24px;
+        }
+
+        .ms-principles {
+          grid-template-columns: 1fr;
+        }
+
+        .ms-cta {
+          padding-bottom: 64px;
+        }
+
+        .ms-cta-inner {
+          padding: 30px 22px;
+        }
+
+        .ms-cta-btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body class="tm-detail-page">
+    <header class="header-wrapper">
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <p class="top-bar-text">AR-EL İnşaat &amp; Hafriyat'a hoş geldiniz.</p>
+          <div class="top-bar-phones">
+            <a href="mailto:arelhafriyat@gmail.com"><i class="fas fa-envelope"></i> arelhafriyat@gmail.com</a>
+            <a href="tel:+905470915252"><i class="fas fa-phone-alt"></i> +90 547 091 52 52</a>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-md tm-navbar main-navbar sticky-top" id="tmNav">
+        <div class="container">
+          <a href="index.html" class="navbar-brand">
+            <img src="img/arel-logo.jpg" alt="AR-EL Hafriyat" class="tm-brand-logo" />
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+            <i class="fas fa-bars navbar-toggler-icon"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="tm-mobile-menu-head">
+              <span class="tm-mobile-menu-title">Menü</span>
+              <button type="button" class="tm-mobile-menu-close" aria-label="Menüyü Kapat">
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link tm-nav-link" href="index.html">Anasayfa</a>
+              </li>
+
+              <li class="nav-item tm-nav-dropdown">
+                <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+                  Hizmetlerimiz <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+                </a>
+                <ul class="tm-nav-submenu" aria-label="Hizmetlerimiz Alt Menüsü">
+                  <li><a class="tm-nav-submenu-link" href="hafriyat-hizmetleri.html">Hafriyat Hizmetleri</a></li>
+                  <li><a class="tm-nav-submenu-link" href="yikim.html">Yıkım Hizmetleri</a></li>
+                  <li><a class="tm-nav-submenu-link" href="altyapi-hafriyat.html">Altyapı Hizmetleri</a></li>
+                  <li><a class="tm-nav-submenu-link" href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+                  <li><a class="tm-nav-submenu-link" href="toprak-malzeme.html">Toprak ve Malzeme Hizmetleri</a></li>
+                  <li><a class="tm-nav-submenu-link" href="peyzaj-cevre-duzenleme.html">Peyzaj ve Çevre Düzenleme</a></li>
+                  <li><a class="tm-nav-submenu-link" href="kepce-kiralama.html">Kepçe Kiralama</a></li>
+                  <li><a class="tm-nav-submenu-link" href="mini-ekipmanlar.html">Mini Ekipmanlarımız</a></li>
+                  <li><a class="tm-nav-submenu-link" href="yol-acma-dolgu.html">Yol Açma ve Dolgu</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item tm-nav-dropdown">
+                <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+                  Kurumsal <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+                </a>
+                <ul class="tm-nav-submenu" aria-label="Kurumsal Alt Menüsü">
+                  <li><a class="tm-nav-submenu-link" href="hakkimizda.html">Hakkımızda</a></li>
+                  <li><a class="tm-nav-submenu-link" href="vizyonumuz.html">Vizyonumuz</a></li>
+                  <li><a class="tm-nav-submenu-link" href="misyonumuz.html">Misyonumuz</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link tm-nav-link" href="iletisim.html">İletişim</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <header class="ms-hero">
+      <div class="ms-hero-content">
+        <h1>Misyonumuz</h1>
+        <p>
+          Hafriyat, yıkım, altyapı ve saha düzenleme çalışmalarında güvenli, planlı ve kaliteli hizmet sunmak.
+        </p>
+      </div>
+    </header>
+
+    <section class="ms-section">
+      <div class="container">
+        <div class="ms-content-grid">
+          <article class="ms-card">
+            <h2>Planlı, Güvenli ve Kaliteli Hizmet</h2>
+            <p>
+              AR-EL İnşaat &amp; Hafriyat olarak misyonumuz; müşterilerimizin ihtiyaç duyduğu hafriyat, yıkım, altyapı, saha düzenleme, moloz taşıma ve ekipman destek hizmetlerini güvenli, hızlı ve profesyonel şekilde sunmaktır.
+            </p>
+            <p>
+              Her projede iş güvenliği, doğru ekipman kullanımı, zamanında teslim ve müşteri memnuniyeti ilkeleriyle hareket ediyoruz. Küçük ölçekli işlerden geniş şantiye çalışmalarına kadar her hizmeti planlı bir iş akışıyla yürütmeyi önemsiyoruz.
+            </p>
+            <p>
+              Saha çalışmalarımızda çevreye duyarlı, düzenli ve kontrollü uygulamalar gerçekleştirerek projelerin sorunsuz ilerlemesine katkı sağlamayı hedefliyoruz. Amacımız yalnızca işi tamamlamak değil, müşterilerimize güven veren kalıcı çözümler üretmektir.
+            </p>
+          </article>
+
+          <figure class="ms-media">
+            <img src="img/hizmetler/hafriyat/hafriyat-hero.jpg" alt="AR-EL misyon saha çalışmaları" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="ms-section pt-0">
+      <div class="container">
+        <h2 class="ms-title">Misyon İlkelerimiz</h2>
+        <div class="ms-title-line"></div>
+
+        <div class="ms-principles">
+          <article class="ms-principle-card">
+            <div class="ms-principle-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Güvenli Çalışma</h3>
+            <p>Tüm saha süreçlerinde iş güvenliği ve kontrollü uygulama anlayışını ön planda tutuyoruz.</p>
+          </article>
+
+          <article class="ms-principle-card">
+            <div class="ms-principle-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+            <h3>Doğru Planlama</h3>
+            <p>Proje ihtiyaçlarını analiz ederek iş akışını zamanında ve düzenli şekilde yönetiyoruz.</p>
+          </article>
+
+          <article class="ms-principle-card">
+            <div class="ms-principle-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Kaliteli Uygulama</h3>
+            <p>Modern ekipman ve deneyimli ekip desteğiyle her işi özenli şekilde tamamlıyoruz.</p>
+          </article>
+
+          <article class="ms-principle-card">
+            <div class="ms-principle-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3>Müşteri Memnuniyeti</h3>
+            <p>Açık iletişim ve güvene dayalı hizmet yaklaşımıyla müşterilerimize çözüm sunuyoruz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ms-section pt-0">
+      <div class="container">
+        <h2 class="ms-title">Nasıl Çalışıyoruz?</h2>
+        <div class="ms-title-line"></div>
+
+        <div class="ms-workflow">
+          <article class="ms-workflow-card">
+            <h3>İhtiyacı Analiz Ediyoruz</h3>
+            <p>Projenin alanını, ihtiyaçlarını ve uygulanacak iş adımlarını doğru şekilde belirliyoruz.</p>
+          </article>
+
+          <article class="ms-workflow-card">
+            <h3>Uygun Ekipman Seçiyoruz</h3>
+            <p>Hafriyat, yıkım veya altyapı işine göre en uygun makine ve ekipmanla sahaya çıkıyoruz.</p>
+          </article>
+
+          <article class="ms-workflow-card">
+            <h3>Zamanında Teslim Ediyoruz</h3>
+            <p>Planlanan iş sürecine bağlı kalarak projeyi düzenli, temiz ve kullanıma hazır şekilde teslim ediyoruz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ms-cta">
+      <div class="container">
+        <div class="ms-cta-inner">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2>Projeniz İçin Doğru Çözümü Birlikte Planlayalım</h2>
+              <p>Hafriyat, yıkım, altyapı ve saha düzenleme ihtiyaçlarınız için profesyonel destek alabilirsiniz.</p>
+            </div>
+            <div class="col-lg-4 text-lg-right">
+              <a href="iletisim.html" class="ms-cta-btn">Bize Ulaşın</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="tm-site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4>AR-EL Hafriyat</h4>
+            <p>Hafriyat, kazı, yıkım, dolgu ve iş makinesi kiralama alanlarında profesyonel çözümler sunuyoruz.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+              <li><a href="index.html#infinite">Anasayfa</a></li>
+              <li><a href="index.html#whatwedo">Hizmetlerimiz</a></li>
+              <li><a href="index.html#gallery">Kurumsal</a></li>
+              <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>Hizmetler</h4>
+            <ul>
+              <li><a href="hafriyat-hizmetleri.html">Hafriyat</a></li>
+              <li><a href="yikim.html">Yıkım</a></li>
+              <li><a href="yikim.html">Moloz Taşıma</a></li>
+              <li><a href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+              <li><a href="altyapi-hafriyat.html">Altyapı Kazı</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>İletişim</h4>
+            <ul>
+              <li>+90 547 091 52 52</li>
+              <li>arelhafriyat@gmail.com</li>
+              <li><a href="https://www.instagram.com/arelhafriyat" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> @arelhafriyat</a></li>
+              <li>İstanbul, Türkiye</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tm-footer-bottom">&copy; 2026 AR-EL Hafriyat. Tüm hakları saklıdır.</div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $('#tmNav a').on('click', function () {
+        $('.navbar-collapse').removeClass('show');
+      });
+    </script>
+    <a href="#" class="scroll-top-btn" aria-label="Sayfanın en üstüne çık">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <script src="js/navbar-dropdown.js"></script>
+    <script src="js/scroll-top.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+

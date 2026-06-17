@@ -1,0 +1,732 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dolgu ve Tesviye Hizmeti | AR-EL İnşaat ve Hafriyat</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta
+      name="description"
+      content="AR-EL İnşaat ve Hafriyat ile saha kotlaması, zemin tesviyesi, dolgu uygulamaları ve şantiye düzenleme çalışmalarında teknik hassasiyetle profesyonel çözümler alın."
+    />
+    <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+    <style>
+      @media (max-width: 767px) {
+        #tmNav .navbar-collapse {
+          background: #ffffff;
+          overflow-y: auto;
+        }
+
+        #tmNav .navbar-nav {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+        }
+
+        #tmNav .nav-item {
+          display: block;
+          width: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link,
+        #tmNav .navbar-collapse .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          color: #111111;
+          font-size: 17px;
+          font-weight: 700;
+          padding: 12px 4px;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-submenu {
+          display: none;
+          position: static;
+          min-width: 100%;
+          margin: 4px 0 12px;
+          padding: 4px 0 4px 14px;
+          background: transparent;
+          border: 0;
+          border-left: 2px solid rgba(216, 161, 6, 0.24);
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+
+        #tmNav .tm-nav-dropdown.is-open > .tm-nav-submenu {
+          display: block;
+        }
+
+        #tmNav .tm-nav-submenu li {
+          display: block;
+          width: 100%;
+        }
+
+        #tmNav .tm-nav-submenu-link {
+          display: block;
+          color: #1f2937;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.5;
+          padding: 8px 0;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link:hover,
+        #tmNav .tm-nav-link:focus,
+        #tmNav .tm-nav-submenu-link:hover,
+        #tmNav .tm-nav-submenu-link:focus {
+          color: #d8a106;
+        }
+      }
+    </style>
+    <style>
+      .dt2-page { background: #f6f7f8; }
+      .dt2-container { max-width: 1240px; }
+      .dt2-section { padding: 100px 0; }
+
+      .dt2-section-title {
+        margin-bottom: 18px;
+        color: #151515;
+        font-size: clamp(2rem, 3.2vw, 2.85rem);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+      .dt2-section-title::after {
+        content: "";
+        display: block;
+        width: 74px;
+        height: 4px;
+        margin-top: 14px;
+        border-radius: 999px;
+        background: #d8a106;
+      }
+      .dt2-section-text {
+        color: #666666;
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      /* HERO */
+      .dt2-hero {
+        position: relative;
+        min-height: clamp(360px, 45vh, 460px);
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        padding: 122px 0 58px;
+        background: #111111;
+      }
+      .dt2-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(110deg, rgba(8,8,8,0.86) 0%, rgba(8,8,8,0.64) 48%, rgba(8,8,8,0.40) 100%),
+          url("img/hizmetler/dolgu-tesviye/dolgu-tesviye-hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .dt2-hero-content { position: relative; z-index: 1; color: #fff; }
+      .dt2-breadcrumb { margin: 0 0 10px; color: rgba(255,255,255,0.84); font-size: 0.95rem; }
+      .dt2-breadcrumb a { color: #f5b400; text-decoration: none; }
+      .dt2-hero-title { margin: 0; color: #fff; font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; }
+
+      /* TWO-COL GRIDS */
+      .dt2-intro-grid,
+      .dt2-info-grid,
+      .dt2-tech-grid {
+        display: grid;
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+        gap: 34px;
+        align-items: center;
+      }
+
+      .dt2-tags { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .dt2-tag {
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(0,0,0,0.08);
+        background: #fff;
+        color: #1c1c1c;
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .dt2-main-image,
+      .dt2-info-image {
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 14px 34px rgba(0,0,0,0.13);
+      }
+      .dt2-main-image img,
+      .dt2-info-image img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* CARD GRIDS */
+      .dt2-services-grid,
+      .dt2-areas-grid,
+      .dt2-equipment-grid,
+      .dt2-why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 22px;
+      }
+
+      .dt2-card,
+      .dt2-area,
+      .dt2-equipment,
+      .dt2-why {
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      }
+
+      .dt2-card { padding: 26px 24px; transition: transform 0.26s ease, box-shadow 0.26s ease; }
+      .dt2-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.12); }
+      .dt2-card-icon {
+        width: 46px; height: 46px;
+        border-radius: 12px; margin-bottom: 16px;
+        display: inline-flex; align-items: center; justify-content: center;
+        color: #171717; background: #f5b400;
+      }
+      .dt2-card h3 { margin-bottom: 9px; color: #111; font-size: 1.2rem; font-weight: 700; }
+      .dt2-card p  { margin: 0; color: #666; font-size: 0.97rem; line-height: 1.72; }
+
+      /* INFO BLOCK */
+      .dt2-info-block { background: #f3f4f5; }
+
+      /* TIMELINE */
+      .dt2-timeline { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 20px; }
+      .dt2-step {
+        position: relative;
+        padding: 28px 20px 24px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      }
+      .dt2-step::after {
+        content: ""; position: absolute; top: 46px; right: -10px;
+        width: 20px; height: 2px; background: rgba(216,161,6,0.55);
+      }
+      .dt2-step:last-child::after { display: none; }
+      .dt2-step-number {
+        width: 38px; height: 38px; margin-bottom: 14px;
+        border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+        font-size: 1rem; font-weight: 800; color: #171717; background: #f5b400;
+      }
+      .dt2-step h4 { margin-bottom: 8px; color: #151515; font-size: 1.06rem; font-weight: 700; }
+      .dt2-step p  { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.68; }
+
+      /* SMALL CARDS */
+      .dt2-area,
+      .dt2-equipment,
+      .dt2-why { padding: 22px 20px; }
+      .dt2-area-head,
+      .dt2-equipment-head,
+      .dt2-why-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+      .dt2-area-head i,
+      .dt2-equipment-head i,
+      .dt2-why-head i {
+        width: 34px; height: 34px; border-radius: 10px;
+        display: inline-flex; align-items: center; justify-content: center;
+        color: #171717; background: rgba(245,180,0,0.25);
+      }
+      .dt2-area h4,
+      .dt2-equipment h4,
+      .dt2-why h4 { margin: 0; color: #151515; font-size: 1.02rem; font-weight: 700; }
+      .dt2-area p,
+      .dt2-equipment p,
+      .dt2-why p { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.7; }
+
+      /* TECH LIST */
+      .dt2-tech-list { margin: 18px 0 0; padding: 0; list-style: none; }
+      .dt2-tech-list li {
+        position: relative; margin-bottom: 12px;
+        padding-left: 28px; color: #4e4e4e; line-height: 1.7;
+      }
+      .dt2-tech-list li::before {
+        content: "\f00c"; font-family: "Font Awesome 5 Free"; font-weight: 900;
+        position: absolute; left: 0; top: 2px; color: #d8a106;
+      }
+
+      /* CTA */
+      .dt2-cta { padding: 0 0 100px; }
+      .dt2-cta-inner {
+        border-radius: 20px; padding: 44px 42px;
+        background: linear-gradient(135deg, #111 0%, #1a1a1a 52%, #2b281c 100%);
+        box-shadow: 0 18px 42px rgba(0,0,0,0.22);
+      }
+      .dt2-cta h3 { margin: 0 0 12px; color: #fff; font-size: clamp(1.6rem,2.9vw,2.06rem); font-weight: 800; }
+      .dt2-cta p  { margin: 0; max-width: 640px; color: rgba(255,255,255,0.86); line-height: 1.75; }
+      .dt2-cta-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .dt2-btn {
+        min-width: 170px; padding: 13px 22px; border-radius: 999px;
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        text-decoration: none; font-weight: 700;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .dt2-btn:hover { transform: translateY(-2px); text-decoration: none; }
+      .dt2-btn-primary { color: #111; background: #f5b400; }
+      .dt2-btn-primary:hover { color: #111; box-shadow: 0 10px 24px rgba(245,180,0,0.35); }
+      .dt2-btn-outline { color: #fff; border: 1px solid rgba(255,255,255,0.32); background: rgba(255,255,255,0.05); }
+      .dt2-btn-outline:hover { color: #fff; background: rgba(255,255,255,0.12); }
+
+      /* RESPONSIVE */
+      @media (max-width: 1199px) {
+        .dt2-timeline { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .dt2-step::after { display: none; }
+      }
+      @media (max-width: 991px) {
+        .dt2-section { padding: 84px 0; }
+        .dt2-intro-grid,
+        .dt2-info-grid,
+        .dt2-tech-grid { grid-template-columns: 1fr; }
+        .dt2-services-grid,
+        .dt2-areas-grid,
+        .dt2-equipment-grid,
+        .dt2-why-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .dt2-main-image img,
+        .dt2-info-image img { height: 300px; }
+      }
+      @media (max-width: 767px) {
+        .dt2-hero { min-height: 360px; padding: 114px 0 46px; }
+        .dt2-section { padding: 72px 0; }
+        .dt2-services-grid,
+        .dt2-timeline,
+        .dt2-areas-grid,
+        .dt2-equipment-grid,
+        .dt2-why-grid { grid-template-columns: 1fr; }
+        .dt2-cta { padding-bottom: 76px; }
+        .dt2-cta-inner { padding: 32px 24px; }
+        .dt2-btn { width: 100%; }
+      }
+    </style>
+  </head>
+  <body class="tm-detail-page dt2-page">
+
+    <!-- NAVBAR -->
+    <header class="header-wrapper">
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <p class="top-bar-text">AR-EL İnşaat &amp; Hafriyat'a hoş geldiniz.</p>
+          <div class="top-bar-phones">
+            <a href="mailto:arelhafriyat@gmail.com"><i class="fas fa-envelope"></i> arelhafriyat@gmail.com</a>
+            <a href="tel:+905470915252"><i class="fas fa-phone-alt"></i> +90 547 091 52 52</a>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-md tm-navbar main-navbar sticky-top" id="tmNav">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="img/arel-logo.jpg" alt="AR-EL Hafriyat" class="tm-brand-logo" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars navbar-toggler-icon"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="tm-mobile-menu-head">
+        <span class="tm-mobile-menu-title">Menü</span>
+        <button type="button" class="tm-mobile-menu-close" aria-label="Menüyü Kapat">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="index.html">Anasayfa</a>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Hizmetlerimiz <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Hizmetlerimiz Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hafriyat-hizmetleri.html">Hafriyat Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="yikim.html">Yıkım Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="altyapi-hafriyat.html">Altyapı Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+            <li><a class="tm-nav-submenu-link" href="toprak-malzeme.html">Toprak ve Malzeme Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="peyzaj-cevre-duzenleme.html">Peyzaj ve Çevre Düzenleme</a></li>
+            <li><a class="tm-nav-submenu-link" href="kepce-kiralama.html">Kepçe Kiralama</a></li>
+            <li><a class="tm-nav-submenu-link" href="mini-ekipmanlar.html">Mini Ekipmanlarımız</a></li>
+            <li><a class="tm-nav-submenu-link" href="yol-acma-dolgu.html">Yol Açma ve Dolgu</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Kurumsal <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Kurumsal Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a class="tm-nav-submenu-link" href="vizyonumuz.html">Vizyonumuz</a></li>
+            <li><a class="tm-nav-submenu-link" href="misyonumuz.html">Misyonumuz</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="iletisim.html">İletişim</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    </header>
+
+    <!-- HERO -->
+    <header class="dt2-hero">
+      <div class="container dt2-container dt2-hero-content">
+        <p class="dt2-breadcrumb"><a href="index.html">Anasayfa</a> / Dolgu ve Tesviye Hizmeti</p>
+        <h1 class="dt2-hero-title">Dolgu ve Tesviye Hizmeti</h1>
+      </div>
+    </header>
+
+    <!-- GİRİŞ -->
+    <section class="dt2-section">
+      <div class="container dt2-container">
+        <div class="dt2-intro-grid">
+          <div>
+            <h2 class="dt2-section-title">Profesyonel Dolgu ve Tesviye Çözümleri</h2>
+            <p class="dt2-section-text">
+              AR-EL İnşaat &amp; Hafriyat olarak; saha kotlaması, zemin düzenleme, dolgu uygulamaları ve tesviye çalışmalarını teknik kriterlere uygun şekilde yürütüyoruz.
+              Proje sahalarının güvenli, dengeli ve kullanıma hazır hale gelmesi için modern ekipmanlarımız ve deneyimli ekibimizle profesyonel çözümler sunuyoruz.
+            </p>
+            <div class="dt2-tags">
+              <span class="dt2-tag">Teknik kot ayarı</span>
+              <span class="dt2-tag">Dengeli zemin hazırlığı</span>
+              <span class="dt2-tag">Planlı saha teslimatı</span>
+            </div>
+          </div>
+          <div class="dt2-main-image">
+            <img src="img/hizmetler/dolgu-tesviye/dolgu-tesviye-hero.jpg" alt="Dolgu ve tesviye çalışması" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HİZMETLER -->
+    <section class="dt2-section pt-0">
+      <div class="container dt2-container">
+        <h2 class="dt2-section-title">Dolgu ve Tesviye Hizmetlerimiz</h2>
+        <div class="dt2-services-grid">
+          <article class="dt2-card">
+            <span class="dt2-card-icon"><i class="fas fa-level-down-alt"></i></span>
+            <h3>Saha Kotlaması</h3>
+            <p>Proje alanını teknik plana uygun kot seviyesine getirerek uygulama sürecine hazır hale getiriyoruz.</p>
+          </article>
+          <article class="dt2-card">
+            <span class="dt2-card-icon"><i class="fas fa-ruler-combined"></i></span>
+            <h3>Zemin Tesviyesi</h3>
+            <p>Zemin yüzeyini düzgün, dengeli ve güvenli bir hale getirerek yapılaşma öncesi hazırlık sağlıyoruz.</p>
+          </article>
+          <article class="dt2-card">
+            <span class="dt2-card-icon"><i class="fas fa-layer-group"></i></span>
+            <h3>Dolgu Uygulamaları</h3>
+            <p>İhtiyaç duyulan alanlarda kontrollü dolgu çalışmaları yaparak zeminin taşıma ve kullanım koşullarını iyileştiriyoruz.</p>
+          </article>
+          <article class="dt2-card">
+            <span class="dt2-card-icon"><i class="fas fa-border-all"></i></span>
+            <h3>Şantiye Alanı Düzenleme</h3>
+            <p>Çalışma sahalarını iş akışına uygun, düzenli ve verimli kullanılabilir hale getiriyoruz.</p>
+          </article>
+          <article class="dt2-card">
+            <span class="dt2-card-icon"><i class="fas fa-road"></i></span>
+            <h3>Yol ve Geçiş Dolgusu</h3>
+            <p>Şantiye içi yollar, geçiş alanları ve saha ulaşımı için dolgu ve düzenleme çözümleri sunuyoruz.</p>
+          </article>
+          <article class="dt2-card">
+            <span class="dt2-card-icon"><i class="fa-solid fa-road"></i></span>
+            <h3>Altyapı Ön Hazırlığı</h3>
+            <p>Altyapı çalışmaları öncesinde zemin düzenleme, dolgu ve tesviye süreçlerini teknik plana uygun yürütüyoruz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEDİR -->
+    <section class="dt2-section dt2-info-block">
+      <div class="container dt2-container">
+        <div class="dt2-info-grid">
+          <div>
+            <h2 class="dt2-section-title">Dolgu ve Tesviye Nedir?</h2>
+            <p class="dt2-section-text">
+              Dolgu ve tesviye; proje sahasının istenen kot seviyesine getirilmesi, zeminin dengelenmesi ve uygulamaya uygun hale hazırlanması sürecidir.
+              Bu çalışma, yapı temelleri, altyapı hatları, yol düzenlemeleri ve çevre düzenleme projelerinde büyük önem taşır.
+              Doğru yapılan dolgu ve tesviye uygulamaları, projelerin daha güvenli, düzenli ve uzun ömürlü ilerlemesini sağlar.
+            </p>
+          </div>
+          <div class="dt2-info-image">
+            <img src="img/hizmetler/dolgu-tesviye/dolgu-tesviye-2.jpg" alt="Dolgu ve tesviye sahası" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SÜREÇ -->
+    <section class="dt2-section">
+      <div class="container dt2-container">
+        <h2 class="dt2-section-title">Dolgu ve Tesviye Süreci Nasıl İlerler?</h2>
+        <div class="dt2-timeline">
+          <article class="dt2-step">
+            <span class="dt2-step-number">1</span>
+            <h4>Keşif ve Ölçüm</h4>
+            <p>Saha incelenir, mevcut zemin durumu ve ihtiyaç duyulan kot seviyesi belirlenir.</p>
+          </article>
+          <article class="dt2-step">
+            <span class="dt2-step-number">2</span>
+            <h4>Teknik Planlama</h4>
+            <p>Dolgu alanı, kullanılacak malzeme, ekipman ve uygulama yöntemi proje kriterlerine göre planlanır.</p>
+          </article>
+          <article class="dt2-step">
+            <span class="dt2-step-number">3</span>
+            <h4>Dolgu ve Tesviye Uygulaması</h4>
+            <p>Saha uygun ekipmanlarla doldurulur, düzeltilir ve gerekli kot seviyesine getirilir.</p>
+          </article>
+          <article class="dt2-step">
+            <span class="dt2-step-number">4</span>
+            <h4>Kontrol ve Teslim</h4>
+            <p>Zemin kontrolleri yapılır, saha düzenlenir ve kullanıma hazır şekilde teslim edilir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- UYGULAMA ALANLARI -->
+    <section class="dt2-section pt-0">
+      <div class="container dt2-container">
+        <h2 class="dt2-section-title">Uygulama Alanları</h2>
+        <div class="dt2-areas-grid">
+          <article class="dt2-area">
+            <div class="dt2-area-head"><i class="fas fa-building"></i><h4>İnşaat Sahaları</h4></div>
+            <p>Yapı temeli uygulamaları öncesi zemin kotlaması ve tesviye hazırlığı.</p>
+          </article>
+          <article class="dt2-area">
+            <div class="dt2-area-head"><i class="fa-solid fa-building"></i><h4>Şantiye Alanları</h4></div>
+            <p>Şantiye içi çalışma sahalarının düzenli ve güvenli kullanıma hazır hale getirilmesi.</p>
+          </article>
+          <article class="dt2-area">
+            <div class="dt2-area-head"><i class="fas fa-project-diagram"></i><h4>Altyapı Projeleri</h4></div>
+            <p>Altyapı hattı güzergahları için ön zemin hazırlığı ve dolgu çalışmaları.</p>
+          </article>
+          <article class="dt2-area">
+            <div class="dt2-area-head"><i class="fas fa-road"></i><h4>Yol ve Geçiş Alanları</h4></div>
+            <p>Saha içi geçiş yolları ve ulaşım güzergahlarının dolgu ile düzenlenmesi.</p>
+          </article>
+          <article class="dt2-area">
+            <div class="dt2-area-head"><i class="fas fa-leaf"></i><h4>Peyzaj ve Çevre Düzenleme</h4></div>
+            <p>Yeşil alan, peyzaj ve çevre düzenleme projelerinde zemin tesviye uygulamaları.</p>
+          </article>
+          <article class="dt2-area">
+            <div class="dt2-area-head"><i class="fas fa-industry"></i><h4>Endüstriyel Zemin Hazırlığı</h4></div>
+            <p>Fabrika, depo ve endüstriyel tesis sahalarında düzgün zemin hazırlık çalışmaları.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEKNİK -->
+    <section class="dt2-section pt-0">
+      <div class="container dt2-container">
+        <div class="dt2-tech-grid">
+          <div>
+            <h2 class="dt2-section-title">Teknik Hassasiyetle Güvenli Zemin Hazırlığı</h2>
+            <p class="dt2-section-text">
+              Dolgu ve tesviye çalışmalarında doğru kot seviyesi, uygun zemin dengesi ve planlı uygulama büyük önem taşır.
+              AR-EL İnşaat &amp; Hafriyat olarak her projede saha koşullarını analiz ediyor, zemini teknik gerekliliklere uygun şekilde hazırlıyor ve uygulama sürecini güvenli biçimde yönetiyoruz.
+            </p>
+            <ul class="dt2-tech-list">
+              <li>Projeye uygun kot ayarı</li>
+              <li>Kontrollü dolgu uygulaması</li>
+              <li>Düzgün ve dengeli zemin hazırlığı</li>
+              <li>Güvenli saha düzenleme</li>
+              <li>Teknik plana uygun teslimat</li>
+            </ul>
+          </div>
+          <div class="dt2-info-image">
+            <img src="img/hizmetler/dolgu-tesviye/dolgu-tesviye-3.jpg" alt="Teknik zemin hazırlığı ve saha düzenlenmesi" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EKİPMANLAR -->
+    <section class="dt2-section pt-0">
+      <div class="container dt2-container">
+        <h2 class="dt2-section-title">Kullanılan Ekipmanlar</h2>
+        <p class="dt2-section-text mb-4">Dolgu ve tesviye projelerinde saha koşullarına uygun güncel iş makineleri kullanarak verimli ve güvenli sonuçlar elde ediyoruz.</p>
+        <div class="dt2-equipment-grid">
+          <article class="dt2-equipment">
+            <div class="dt2-equipment-head"><i class="fas fa-truck-monster"></i><h4>Ekskavatör</h4></div>
+            <p>Büyük alanlarda hızlı ve etkin kazı ile dolgu operasyonları gerçekleştirir.</p>
+          </article>
+          <article class="dt2-equipment">
+            <div class="dt2-equipment-head"><i class="fa-solid fa-truck-front"></i><h4>Kepçe</h4></div>
+            <p>Zemin düzeltme ve kısa mesafe dolgu taşıma işlemlerinde yüksek verim sağlar.</p>
+          </article>
+          <article class="dt2-equipment">
+            <div class="dt2-equipment-head"><i class="fas fa-cogs"></i><h4>Loader</h4></div>
+            <p>Dolgu malzemesinin yüklenmesi ve saha içi taşıma süreçlerinde etkin kullanım sunar.</p>
+          </article>
+          <article class="dt2-equipment">
+            <div class="dt2-equipment-head"><i class="fas fa-ruler-horizontal"></i><h4>Greyder</h4></div>
+            <p>Zemin tesviyesinde hassas yüzey düzeltme ve kot ayarı sağlar.</p>
+          </article>
+          <article class="dt2-equipment">
+            <div class="dt2-equipment-head"><i class="fas fa-circle-notch"></i><h4>Silindir</h4></div>
+            <p>Dolgu sonrası zeminin sıkıştırılması ve taşıma kapasitesinin artırılması için kullanılır.</p>
+          </article>
+          <article class="dt2-equipment">
+            <div class="dt2-equipment-head"><i class="fas fa-truck"></i><h4>Kamyon</h4></div>
+            <p>Dolgu malzemesinin ve hafriyatın düzenli ve hızlı şekilde taşınmasını sağlar.</p>
+          </article>
+          <article class="dt2-equipment">
+            <div class="dt2-equipment-head"><i class="fa-solid fa-screwdriver-wrench"></i><h4>Mini Ekipmanlar</h4></div>
+            <p>Dar ve hassas alanlarda tesviye ile son düzenleme işlemlerinde destek sağlar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEDEN BİZ -->
+    <section class="dt2-section pt-0">
+      <div class="container dt2-container">
+        <h2 class="dt2-section-title">Neden AR-EL İnşaat &amp; Hafriyat?</h2>
+        <div class="dt2-why-grid">
+          <article class="dt2-why">
+            <div class="dt2-why-head"><i class="fas fa-drafting-compass"></i><h4>Teknik Hassasiyet</h4></div>
+            <p>Her dolgu ve tesviye operasyonunu proje teknik şartnamesine uygun şekilde yürütüyoruz.</p>
+          </article>
+          <article class="dt2-why">
+            <div class="dt2-why-head"><i class="fas fa-users"></i><h4>Deneyimli Ekip</h4></div>
+            <p>Uzman operatör ve ekibimizle sahada hızlı, kontrollü ve verimli ilerleme sağlıyoruz.</p>
+          </article>
+          <article class="dt2-why">
+            <div class="dt2-why-head"><i class="fas fa-cogs"></i><h4>Modern Makine Parkı</h4></div>
+            <p>Farklı saha şartlarına uygun güncel ekipman altyapısıyla güçlü çözümler sunuyoruz.</p>
+          </article>
+          <article class="dt2-why">
+            <div class="dt2-why-head"><i class="fas fa-clipboard-list"></i><h4>Planlı Operasyon</h4></div>
+            <p>Tüm süreçleri önceden planlayarak saha verimliliğini ve kalitesini maksimuma çıkarıyoruz.</p>
+          </article>
+          <article class="dt2-why">
+            <div class="dt2-why-head"><i class="fas fa-shield-alt"></i><h4>Güvenli Zemin Hazırlığı</h4></div>
+            <p>İş güvenliği standartlarını ön planda tutarak her operasyonu güvenle tamamlıyoruz.</p>
+          </article>
+          <article class="dt2-why">
+            <div class="dt2-why-head"><i class="fas fa-clock"></i><h4>Zamanında Teslimat</h4></div>
+            <p>Proje takvimine uygun planlama ve etkin saha yönetimiyle zamanında teslim yapıyoruz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="dt2-cta">
+      <div class="container dt2-container">
+        <div class="dt2-cta-inner">
+          <h3>Dolgu ve Tesviye Hizmeti İçin Teklif Alın</h3>
+          <p>Saha kotlaması, zemin düzenleme ve dolgu ihtiyaçlarınız için profesyonel ekibimizden hızlı teklif alın.</p>
+          <div class="dt2-cta-actions">
+            <a href="iletisim.html" class="dt2-btn dt2-btn-primary"><i class="fas fa-phone-alt"></i> İletişime Geç</a>
+            <a href="https://wa.me/905470915252?text=Merhabalar,%20bilgi%20alabilir%20miyim?" class="dt2-btn dt2-btn-outline" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="tm-site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4>AR-EL Hafriyat</h4>
+            <p>Hafriyat, kazı, yıkım, dolgu ve iş makinesi kiralama alanlarında profesyonel çözümler sunuyoruz.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+              <li><a href="index.html#infinite">Anasayfa</a></li>
+              <li><a href="index.html#whatwedo">Hizmetlerimiz</a></li>
+              <li><a href="index.html#gallery">Kurumsal</a></li>
+              <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>Hizmetler</h4>
+            <ul>
+              <li><a href="hafriyat-hizmetleri.html">Hafriyat</a></li>
+              <li><a href="yikim.html">Yıkım</a></li>
+              <li><a href="yikim.html">Moloz Taşıma</a></li>
+              <li><a href="altyapi-hafriyat.html">Altyapı Hafriyat</a></li>
+              <li><a href="altyapi-hafriyat.html">Altyapı Kazı</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>İletişim</h4>
+            <ul>
+              <li>+90 547 091 52 52</li>
+              <li>arelhafriyat@gmail.com</li>
+              <li><a href="https://www.instagram.com/arelhafriyat" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> @arelhafriyat</a></li>
+              <li>İstanbul, Türkiye</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tm-footer-bottom">&copy; 2026 AR-EL Hafriyat. Tüm hakları saklıdır.</div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $('#tmNav a').on('click', function () {
+        $('.navbar-collapse').removeClass('show');
+      });
+    </script>
+      <a href="#" class="scroll-top-btn" aria-label="Sayfanın en üstüne çık">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <script src="js/navbar-dropdown.js"></script>
+    <script src="js/scroll-top.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

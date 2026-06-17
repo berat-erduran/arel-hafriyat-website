@@ -1,0 +1,1005 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yıkım Hizmetleri | AR-EL İnşaat & Hafriyat</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta
+      name="description"
+      content="AR-EL İnşaat & Hafriyat ile kontrollü yıkım, moloz kaldırma, saha temizliği ve güvenli söküm süreçlerinde profesyonel destek alın."
+    />
+    <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+    <style>
+      @media (max-width: 767px) {
+        #tmNav .navbar-collapse {
+          background: #ffffff;
+          overflow-y: auto;
+        }
+
+        #tmNav .navbar-nav {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+        }
+
+        #tmNav .nav-item {
+          display: block;
+          width: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link,
+        #tmNav .navbar-collapse .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          color: #111111;
+          font-size: 17px;
+          font-weight: 700;
+          padding: 12px 4px;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-submenu {
+          display: none;
+          position: static;
+          min-width: 100%;
+          margin: 4px 0 12px;
+          padding: 4px 0 4px 14px;
+          background: transparent;
+          border: 0;
+          border-left: 2px solid rgba(216, 161, 6, 0.24);
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+
+        #tmNav .tm-nav-dropdown.is-open > .tm-nav-submenu {
+          display: block;
+        }
+
+        #tmNav .tm-nav-submenu li {
+          display: block;
+          width: 100%;
+        }
+
+        #tmNav .tm-nav-submenu-link {
+          display: block;
+          color: #1f2937;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.5;
+          padding: 8px 0;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link:hover,
+        #tmNav .tm-nav-link:focus,
+        #tmNav .tm-nav-submenu-link:hover,
+        #tmNav .tm-nav-submenu-link:focus {
+          color: #d8a106;
+        }
+      }
+    </style>
+    <style>
+      .yk-page {
+        background: #f6f7f8;
+      }
+
+      .yk-container {
+        max-width: 1240px;
+      }
+
+      .yk-section {
+        padding: 100px 0;
+      }
+
+      .yk-section-title {
+        margin-bottom: 18px;
+        color: #151515;
+        font-size: clamp(2rem, 3.4vw, 2.9rem);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+
+      .yk-section-title::after {
+        content: "";
+        display: block;
+        width: 74px;
+        height: 4px;
+        margin-top: 14px;
+        border-radius: 999px;
+        background: #d8a106;
+      }
+
+      .yk-section-text {
+        color: #666;
+        font-size: 1.06rem;
+        line-height: 1.85;
+      }
+
+      .yk-hero {
+        position: relative;
+        min-height: clamp(360px, 46vh, 460px);
+        display: flex;
+        align-items: flex-end;
+        padding: 120px 0 56px;
+        overflow: hidden;
+        background: #101010;
+      }
+
+      .yk-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(115deg, rgba(10, 10, 10, 0.84) 0%, rgba(10, 10, 10, 0.64) 48%, rgba(10, 10, 10, 0.42) 100%),
+          url("img/hizmetler/yikim/yikim-hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .yk-hero-content {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+      }
+
+      .yk-breadcrumb {
+        margin: 0 0 10px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 0.95rem;
+      }
+
+      .yk-breadcrumb a {
+        color: #f5b400;
+        text-decoration: none;
+      }
+
+      .yk-hero-title {
+        margin: 0;
+        color: #fff;
+        font-size: clamp(2.1rem, 5vw, 3.35rem);
+        font-weight: 800;
+      }
+
+      .yk-intro-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 38px;
+        align-items: center;
+      }
+
+      .yk-intro-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .yk-badge {
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        color: #1b1b1b;
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .yk-media-card {
+        overflow: hidden;
+        border-radius: 18px;
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+      }
+
+      .yk-media-card img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .yk-mini-gallery {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .yk-mini-gallery figure {
+        margin: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .yk-mini-gallery img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s ease;
+      }
+
+      .yk-mini-gallery figure:hover img {
+        transform: scale(1.06);
+      }
+
+      .yk-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 26px;
+      }
+
+      .yk-card {
+        height: 100%;
+        padding: 26px 24px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+        transition: transform 0.28s ease, box-shadow 0.28s ease;
+      }
+
+      .yk-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+      }
+
+      .yk-card-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #171717;
+        background: #f5b400;
+        font-size: 1rem;
+      }
+
+      .yk-card h3 {
+        margin-bottom: 10px;
+        color: #111;
+        font-size: 1.24rem;
+        font-weight: 700;
+      }
+
+      .yk-card p {
+        margin: 0;
+        color: #666;
+        font-size: 0.98rem;
+        line-height: 1.72;
+      }
+
+      .yk-info-block {
+        background: #eef1f3;
+      }
+
+      .yk-info-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      .yk-info-image {
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .yk-info-image img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .yk-timeline {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .yk-step {
+        padding: 28px 20px 24px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      .yk-step-number {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        margin-bottom: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 800;
+        color: #171717;
+        background: #f5b400;
+      }
+
+      .yk-step h4 {
+        margin-bottom: 8px;
+        color: #151515;
+        font-size: 1.06rem;
+        font-weight: 700;
+      }
+
+      .yk-step p {
+        margin: 0;
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.68;
+      }
+
+      .yk-types-grid,
+      .yk-equipment-grid,
+      .yk-why-grid,
+      .yk-legal-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .yk-legal-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .yk-type,
+      .yk-equipment,
+      .yk-why,
+      .yk-legal {
+        padding: 22px 20px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      .yk-type-head,
+      .yk-equipment-head,
+      .yk-why-head,
+      .yk-legal-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .yk-type-head i,
+      .yk-equipment-head i,
+      .yk-why-head i,
+      .yk-legal-head i {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #171717;
+        background: rgba(245, 180, 0, 0.25);
+      }
+
+      .yk-type h4,
+      .yk-equipment h4,
+      .yk-why h4,
+      .yk-legal h4 {
+        margin: 0;
+        color: #151515;
+        font-size: 1.02rem;
+        font-weight: 700;
+      }
+
+      .yk-type p,
+      .yk-equipment p,
+      .yk-why p,
+      .yk-legal p {
+        margin: 0;
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      .yk-safety-grid,
+      .yk-sustain-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 34px;
+        align-items: center;
+      }
+
+      .yk-safety-list,
+      .yk-sustain-list {
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .yk-safety-list li,
+      .yk-sustain-list li {
+        position: relative;
+        margin-bottom: 12px;
+        padding-left: 28px;
+        color: #494949;
+        line-height: 1.7;
+      }
+
+      .yk-safety-list li::before,
+      .yk-sustain-list li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: #d8a106;
+      }
+
+      .yk-cta {
+        padding: 0 0 100px;
+      }
+
+      .yk-cta-inner {
+        border-radius: 20px;
+        padding: 44px 42px;
+        background: linear-gradient(135deg, #121212 0%, #1d1d1d 52%, #2a2619 100%);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+      }
+
+      .yk-cta h3 {
+        margin: 0 0 12px;
+        color: #fff;
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        font-weight: 800;
+      }
+
+      .yk-cta p {
+        margin: 0;
+        max-width: 560px;
+        color: rgba(255, 255, 255, 0.86);
+        line-height: 1.75;
+      }
+
+      .yk-cta-actions {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .yk-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-width: 170px;
+        padding: 13px 22px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .yk-btn:hover {
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+
+      .yk-btn-primary {
+        color: #111;
+        background: #f5b400;
+      }
+
+      .yk-btn-primary:hover {
+        color: #111;
+        box-shadow: 0 10px 24px rgba(245, 180, 0, 0.35);
+      }
+
+      .yk-btn-outline {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .yk-btn-outline:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      @media (max-width: 1199px) {
+        .yk-timeline {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 991px) {
+        .yk-section {
+          padding: 84px 0;
+        }
+
+        .yk-intro-grid,
+        .yk-info-grid,
+        .yk-safety-grid,
+        .yk-sustain-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .yk-cards-grid,
+        .yk-types-grid,
+        .yk-equipment-grid,
+        .yk-why-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .yk-legal-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .yk-media-card img,
+        .yk-info-image img {
+          height: 320px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .yk-hero {
+          min-height: 360px;
+          padding: 114px 0 46px;
+        }
+
+        .yk-section {
+          padding: 72px 0;
+        }
+
+        .yk-mini-gallery,
+        .yk-cards-grid,
+        .yk-timeline,
+        .yk-types-grid,
+        .yk-equipment-grid,
+        .yk-why-grid,
+        .yk-legal-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .yk-mini-gallery img {
+          height: 220px;
+        }
+
+        .yk-cta {
+          padding-bottom: 76px;
+        }
+
+        .yk-cta-inner {
+          padding: 32px 24px;
+        }
+
+        .yk-btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body class="tm-detail-page yk-page">
+    <header class="header-wrapper">
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <p class="top-bar-text">AR-EL İnşaat &amp; Hafriyat'a hoş geldiniz.</p>
+          <div class="top-bar-phones">
+            <a href="mailto:arelhafriyat@gmail.com"><i class="fas fa-envelope"></i> arelhafriyat@gmail.com</a>
+            <a href="tel:+905470915252"><i class="fas fa-phone-alt"></i> +90 547 091 52 52</a>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-md tm-navbar main-navbar sticky-top" id="tmNav">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="img/arel-logo.jpg" alt="AR-EL Hafriyat" class="tm-brand-logo" />
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Menüyü Aç"
+    >
+      <i class="fas fa-bars navbar-toggler-icon"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="tm-mobile-menu-head">
+        <span class="tm-mobile-menu-title">Menü</span>
+        <button type="button" class="tm-mobile-menu-close" aria-label="Menüyü Kapat">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="index.html">Anasayfa</a>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Hizmetlerimiz <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Hizmetlerimiz Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hafriyat-hizmetleri.html">Hafriyat Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="yikim.html">Yıkım Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="altyapi-hafriyat.html">Altyapı Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+            <li><a class="tm-nav-submenu-link" href="toprak-malzeme.html">Toprak ve Malzeme Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="peyzaj-cevre-duzenleme.html">Peyzaj ve Çevre Düzenleme</a></li>
+            <li><a class="tm-nav-submenu-link" href="kepce-kiralama.html">Kepçe Kiralama</a></li>
+            <li><a class="tm-nav-submenu-link" href="mini-ekipmanlar.html">Mini Ekipmanlarımız</a></li>
+            <li><a class="tm-nav-submenu-link" href="yol-acma-dolgu.html">Yol Açma ve Dolgu</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Kurumsal <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Kurumsal Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a class="tm-nav-submenu-link" href="vizyonumuz.html">Vizyonumuz</a></li>
+            <li><a class="tm-nav-submenu-link" href="misyonumuz.html">Misyonumuz</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="iletisim.html">İletişim</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    </header>
+
+    <header class="yk-hero">
+      <div class="container yk-container yk-hero-content">
+        <p class="yk-breadcrumb"><a href="index.html">Anasayfa</a> / Yıkım Hizmetleri</p>
+        <h1 class="yk-hero-title">Yıkım Hizmetleri</h1>
+      </div>
+    </header>
+
+    <section class="yk-section">
+      <div class="container yk-container">
+        <div class="yk-intro-grid">
+          <div>
+            <h2 class="yk-section-title">Profesyonel Yıkım Hizmetleri</h2>
+            <p class="yk-section-text">
+              AR-EL İnşaat &amp; Hafriyat olarak; bina yıkımı, duvar yıkımı, kontrollü yıkım, moloz kaldırma ve saha temizliği alanlarında profesyonel çözümler sunuyoruz.
+              Deneyimli ekibimiz, modern iş makinelerimiz ve güvenlik odaklı çalışma anlayışımızla yıkım projelerinizi planlı, hızlı ve çevreye duyarlı şekilde tamamlıyoruz.
+            </p>
+            <div class="yk-intro-badges">
+              <span class="yk-badge">Kontrollü yıkım</span>
+              <span class="yk-badge">İş güvenliği</span>
+              <span class="yk-badge">Moloz kaldırma</span>
+            </div>
+          </div>
+          <div class="yk-media-card">
+            <img src="img/hizmetler/yikim/yikim-hero.jpg" alt="Yıkım çalışması" />
+          </div>
+        </div>
+
+        <div class="yk-mini-gallery">
+          <figure><img src="img/hizmetler/yikim/yikim-3.jpg" alt="Yıkım ve moloz kaldırma" /></figure>
+          <figure><img src="img/hizmetler/yikim/yikim-4.jpg" alt="Yıkım saha çalışması" /></figure>
+          <figure><img src="img/hizmetler/yikim/yikim-2.jpg" alt="Kontrollü yıkım uygulaması" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="yk-section pt-0">
+      <div class="container yk-container">
+        <h2 class="yk-section-title">Yıkım Hizmetlerimiz</h2>
+        <div class="yk-cards-grid">
+          <article class="yk-card">
+            <span class="yk-card-icon"><i class="fas fa-building"></i></span>
+            <h3>Bina Yıkımı</h3>
+            <p>Konut, iş yeri ve ticari yapıların güvenli ve kontrollü şekilde yıkım işlemlerini gerçekleştiriyoruz.</p>
+          </article>
+          <article class="yk-card">
+            <span class="yk-card-icon"><i class="fa-solid fa-hammer"></i></span>
+            <h3>Duvar Yıkımı</h3>
+            <p>İç ve dış duvar yıkımı, bölme duvar sökümü ve tadilat öncesi alan açma işlemlerini titizlikle yürütüyoruz.</p>
+          </article>
+          <article class="yk-card">
+            <span class="yk-card-icon"><i class="fas fa-shield-alt"></i></span>
+            <h3>Kontrollü Yıkım</h3>
+            <p>Kısmi yıkım gerektiren projelerde yapının diğer bölümlerine zarar vermeden kontrollü çözümler sunuyoruz.</p>
+          </article>
+          <article class="yk-card">
+            <span class="yk-card-icon"><i class="fas fa-tools"></i></span>
+            <h3>İskelet Söküm</h3>
+            <p>Demir konstrüksiyon, çelik iskelet ve benzeri yapı elemanlarının söküm işlemlerini güvenli şekilde yapıyoruz.</p>
+          </article>
+          <article class="yk-card">
+            <span class="yk-card-icon"><i class="fas fa-truck-loading"></i></span>
+            <h3>Moloz Alımı ve Nakli</h3>
+            <p>Yıkım sonrası oluşan moloz ve atıkları düzenli şekilde topluyor, taşıyor ve uygun alanlara ulaştırıyoruz.</p>
+          </article>
+          <article class="yk-card">
+            <span class="yk-card-icon"><i class="fas fa-broom"></i></span>
+            <h3>Saha Temizliği</h3>
+            <p>Yıkım işlemi sonrasında çalışma alanını temiz, düzenli ve yeni projeye hazır hale getiriyoruz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yk-section yk-info-block">
+      <div class="container yk-container">
+        <div class="yk-info-grid">
+          <div>
+            <h2 class="yk-section-title">Yıkım Nedir?</h2>
+            <p class="yk-section-text">
+              Yıkım; yapıların veya yapı elemanlarının kontrollü, güvenli ve planlı şekilde sökülmesi, parçalanması ve alandan kaldırılması sürecidir.
+              Bu süreç yalnızca bir binayı ortadan kaldırmak değildir; iş güvenliği, çevre düzeni, atık yönetimi, ekipman seçimi ve yasal süreçlerin doğru şekilde yürütülmesini de kapsar.
+            </p>
+          </div>
+          <div class="yk-info-image">
+            <img src="img/hizmetler/yikim/yikim-1.jpg" alt="Bina yıkım süreci" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="yk-section">
+      <div class="container yk-container">
+        <h2 class="yk-section-title">Yıkım Süreci Nasıl İlerler?</h2>
+        <div class="yk-timeline">
+          <article class="yk-step">
+            <span class="yk-step-number">1</span>
+            <h4>Keşif ve Risk Analizi</h4>
+            <p>Yıkım yapılacak alan incelenir, yapı durumu, çevre güvenliği ve çalışma koşulları değerlendirilir.</p>
+          </article>
+          <article class="yk-step">
+            <span class="yk-step-number">2</span>
+            <h4>Hazırlık ve Güvenlik</h4>
+            <p>Çalışma alanı çevrilir, gerekli güvenlik önlemleri alınır ve ekipman hazırlığı yapılır.</p>
+          </article>
+          <article class="yk-step">
+            <span class="yk-step-number">3</span>
+            <h4>Kontrollü Yıkım</h4>
+            <p>Yapı, proje planına uygun şekilde kontrollü olarak sökülür veya parçalanır.</p>
+          </article>
+          <article class="yk-step">
+            <span class="yk-step-number">4</span>
+            <h4>Moloz Nakli ve Saha Temizliği</h4>
+            <p>Yıkım sonrası oluşan atıklar toplanır, taşınır ve alan temizlenerek teslim edilir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yk-section pt-0">
+      <div class="container yk-container">
+        <h2 class="yk-section-title">Yıkım Türleri</h2>
+        <div class="yk-types-grid">
+          <article class="yk-type">
+            <div class="yk-type-head"><i class="fas fa-home"></i><h4>Bina Yıkımı</h4></div>
+            <p>Konut, iş yeri ve ticari yapıların kontrollü yıkım süreçlerini kapsar.</p>
+          </article>
+          <article class="yk-type">
+            <div class="yk-type-head"><i class="fas fa-industry"></i><h4>Endüstriyel Yıkım</h4></div>
+            <p>Fabrika, depo ve tesislerde özel ekipmanlarla söküm ve yıkım işlemleridir.</p>
+          </article>
+          <article class="yk-type">
+            <div class="yk-type-head"><i class="fas fa-door-open"></i><h4>İç Mekan Sökümü</h4></div>
+            <p>Tadilat veya yenileme öncesi iç bölümlerin güvenli şekilde kaldırılmasıdır.</p>
+          </article>
+          <article class="yk-type">
+            <div class="yk-type-head"><i class="fas fa-city"></i><h4>Kentsel Dönüşüm Yıkımı</h4></div>
+            <p>Şehir içinde planlı, güvenli ve çevreye duyarlı yıkım uygulamalarıdır.</p>
+          </article>
+          <article class="yk-type">
+            <div class="yk-type-head"><i class="fas fa-puzzle-piece"></i><h4>Kısmi Yıkım</h4></div>
+            <p>Yapının belirli bölümlerinin diğer alanlara zarar vermeden kaldırılmasıdır.</p>
+          </article>
+          <article class="yk-type">
+            <div class="yk-type-head"><i class="fa-solid fa-dumpster"></i><h4>Moloz ve Atık Yönetimi</h4></div>
+            <p>Yıkım sonrası oluşan atıkların düzenli taşınması ve uygun şekilde bertaraf edilmesidir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yk-section pt-0">
+      <div class="container yk-container">
+        <div class="yk-safety-grid">
+          <div>
+            <h2 class="yk-section-title">Çevreye Duyarlı ve Güvenli Yıkım</h2>
+            <p class="yk-section-text">
+              Yıkım çalışmalarında iş güvenliği, çevre kontrolü ve atık yönetimi büyük önem taşır. AR-EL İnşaat &amp; Hafriyat olarak çalışmalarımızı güvenli alan oluşturma,
+              kontrollü operasyon, çevreye duyarlılık ve mevzuata uygunluk ilkeleriyle yürütüyoruz.
+            </p>
+            <ul class="yk-safety-list">
+              <li>Kontrollü çalışma alanı oluşturma</li>
+              <li>Toz ve gürültü etkilerini azaltma</li>
+              <li>Moloz ve atıkların düzenli taşınması</li>
+              <li>İş güvenliği kurallarına uygun operasyon</li>
+              <li>Çevreye duyarlı yıkım yaklaşımı</li>
+            </ul>
+          </div>
+          <div class="yk-info-image">
+            <img src="img/hizmetler/yikim/yikim-2.jpg" alt="Kontrollü yıkım uygulaması" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="yk-section pt-0">
+      <div class="container yk-container">
+        <h2 class="yk-section-title">Yıkımda Planlama ve Yasal Süreç</h2>
+        <p class="yk-section-text mb-4">
+          Yıkım işlemleri, çevre güvenliği ve mevzuata uygunluk açısından planlı şekilde yürütülmelidir. Çalışma öncesinde gerekli izinler, alan güvenliği,
+          atık taşıma planı ve ekipman seçimi değerlendirilir. Böylece hem çalışan güvenliği hem de çevre düzeni korunur.
+        </p>
+        <div class="yk-legal-grid">
+          <article class="yk-legal"><div class="yk-legal-head"><i class="fas fa-search-location"></i><h4>Alan keşfi</h4></div><p>Yıkım öncesinde saha özellikleri ve risk noktaları detaylı şekilde belirlenir.</p></article>
+          <article class="yk-legal"><div class="yk-legal-head"><i class="fas fa-user-shield"></i><h4>Güvenlik planı</h4></div><p>Çalışanlar, çevre yapı ve yayalar için kapsamlı güvenlik protokolleri hazırlanır.</p></article>
+          <article class="yk-legal"><div class="yk-legal-head"><i class="fas fa-truck"></i><h4>Atık taşıma düzeni</h4></div><p>Moloz ve atıkların yasal mevzuata uygun taşıma ve döküm planı oluşturulur.</p></article>
+          <article class="yk-legal"><div class="yk-legal-head"><i class="fas fa-tasks"></i><h4>Kontrollü uygulama</h4></div><p>Yıkım süreci plan dahilinde adım adım denetlenerek güvenli şekilde tamamlanır.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yk-section pt-0">
+      <div class="container yk-container">
+        <h2 class="yk-section-title">Yıkım Teknolojileri ve Ekipmanlarımız</h2>
+        <p class="yk-section-text mb-4">Projelerimizde ihtiyaca uygun iş makineleri ve ekipmanlar kullanarak güvenli, hızlı ve verimli çözümler üretiyoruz.</p>
+        <div class="yk-equipment-grid">
+          <article class="yk-equipment"><div class="yk-equipment-head"><i class="fas fa-truck-monster"></i><h4>Ekskavatör</h4></div><p>Ağır yıkım ve yükleme operasyonlarında yüksek kapasite sağlar.</p></article>
+          <article class="yk-equipment"><div class="yk-equipment-head"><i class="fas fa-hammer"></i><h4>Hidrolik kırıcı</h4></div><p>Betonarme ve sert yapı elemanlarını kontrollü biçimde parçalar.</p></article>
+          <article class="yk-equipment"><div class="yk-equipment-head"><i class="fa-solid fa-truck-front"></i><h4>Kepçe</h4></div><p>Söküm sonrası yükleme ve saha düzenleme işlemlerinde etkin kullanılır.</p></article>
+          <article class="yk-equipment"><div class="yk-equipment-head"><i class="fas fa-truck"></i><h4>Kamyon</h4></div><p>Moloz ve atık malzemelerin güvenli ve düzenli taşınmasını sağlar.</p></article>
+          <article class="yk-equipment"><div class="yk-equipment-head"><i class="fas fa-warehouse"></i><h4>Vinç</h4></div><p>Ağır parçaların söküm ve kaldırma işlemlerinde hassas destek sunar.</p></article>
+          <article class="yk-equipment"><div class="yk-equipment-head"><i class="fa-solid fa-screwdriver-wrench"></i><h4>Mini ekipmanlar</h4></div><p>Dar alanlarda kontrollü söküm için esnek operasyon imkanı sağlar.</p></article>
+          <article class="yk-equipment"><div class="yk-equipment-head"><i class="fas fa-wrench"></i><h4>Kırıcı ve sökücü ekipmanlar</h4></div><p>Farklı yapı tiplerine uygun yıkım süreçlerinde verimli çözüm üretir.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yk-section pt-0">
+      <div class="container yk-container">
+        <div class="yk-sustain-grid">
+          <div>
+            <h2 class="yk-section-title">Sürdürülebilir Yıkım ve Atık Yönetimi</h2>
+            <p class="yk-section-text">
+              Yıkım sonrasında ortaya çıkan moloz, beton, metal, ahşap ve benzeri atıkların doğru şekilde yönetilmesi çevre açısından önemlidir.
+              Uygun ayrıştırma ve taşıma süreçleriyle çevresel etkiler azaltılır, saha yeni projeler için güvenli hale getirilir.
+            </p>
+            <ul class="yk-sustain-list">
+              <li>Beton ve moloz atıklarının düzenli taşınması</li>
+              <li>Metal ve geri dönüştürülebilir malzemelerin ayrıştırılması</li>
+              <li>Saha temizliğinin planlı yapılması</li>
+              <li>Çevreye zarar vermeyen uygulama yaklaşımı</li>
+            </ul>
+          </div>
+          <div class="yk-info-image">
+            <img src="img/hizmetler/yikim/yikim-3.jpg" alt="Sürddürülebilir yıkım uygulamaları" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="yk-section pt-0">
+      <div class="container yk-container">
+        <h2 class="yk-section-title">Neden AR-EL İnşaat &amp; Hafriyat?</h2>
+        <div class="yk-why-grid">
+          <article class="yk-why"><div class="yk-why-head"><i class="fas fa-users"></i><h4>Deneyimli Kadro</h4></div><p>Uzman ekiplerimizle her yıkım projesini güvenli ve planlı şekilde yönetiyoruz.</p></article>
+          <article class="yk-why"><div class="yk-why-head"><i class="fas fa-cogs"></i><h4>Modern Makine Parkı</h4></div><p>Yüksek performanslı ekipmanlarımızla farklı ölçeklerde etkin çözüm sunuyoruz.</p></article>
+          <article class="yk-why"><div class="yk-why-head"><i class="fas fa-shield-alt"></i><h4>İş Güvenliği</h4></div><p>Tüm operasyonlarda çalışan güvenliği ve çevre korumasını önceliklendiriyoruz.</p></article>
+          <article class="yk-why"><div class="yk-why-head"><i class="fas fa-clipboard-check"></i><h4>Kontrollü Operasyon</h4></div><p>Her adımı teknik plan doğrultusunda izlenebilir ve kontrollü şekilde uyguluyoruz.</p></article>
+          <article class="yk-why"><div class="yk-why-head"><i class="fas fa-bolt"></i><h4>Hızlı Teslimat</h4></div><p>İş programına uygun ilerleyerek projelerinizi zaman kaybı yaşamadan tamamlıyoruz.</p></article>
+          <article class="yk-why"><div class="yk-why-head"><i class="fas fa-leaf"></i><h4>Çevreye Duyarlı Hizmet</h4></div><p>Atık yönetimi ve saha düzenini sürdürülebilir uygulamalarla gerçekleştiriyoruz.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yk-cta">
+      <div class="container yk-container">
+        <div class="yk-cta-inner">
+          <h3>Yıkım Hizmeti İçin Teklif Alın</h3>
+          <p>Profesyonel ekibimiz, projenize en uygun yıkım çözümünü sunmak için hazır.</p>
+          <div class="yk-cta-actions">
+            <a href="iletisim.html" class="yk-btn yk-btn-primary"><i class="fas fa-phone-alt"></i> İletişime Geç</a>
+            <a href="https://wa.me/905470915252?text=Merhabalar,%20bilgi%20alabilir%20miyim?" class="yk-btn yk-btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp&rsquo;tan Yaz</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="tm-site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4>AR-EL Hafriyat</h4>
+            <p>Hafriyat, kazı, yıkım, dolgu ve iş makinesi kiralama alanlarında profesyonel çözümler sunuyoruz.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+              <li><a href="index.html#infinite">Anasayfa</a></li>
+              <li><a href="index.html#whatwedo">Hizmetlerimiz</a></li>
+              <li><a href="index.html#gallery">Kurumsal</a></li>
+              <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>Hizmetler</h4>
+            <ul>
+              <li><a href="hafriyat-hizmetleri.html">Hafriyat</a></li>
+              <li><a href="yikim.html">Yıkım</a></li>
+              <li><a href="yikim.html">Moloz Taşıma</a></li>
+              <li><a href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+              <li><a href="mini-ekipmanlar.html">İş Makinesi Kiralama</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>İletişim</h4>
+            <ul>
+              <li>+90 547 091 52 52</li>
+              <li>arelhafriyat@gmail.com</li>
+              <li><a href="https://www.instagram.com/arelhafriyat" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram: @arelhafriyat</a></li>
+              <li>Kırlı Merkez / Perşembe / Ordu</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tm-footer-bottom">&copy; 2026 AR-EL Hafriyat. Tüm hakları saklıdır.</div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $('#tmNav a').on('click', function() {
+        $('.navbar-collapse').removeClass('show');
+      });
+    </script>
+      <a href="#" class="scroll-top-btn" aria-label="Sayfanın en üstüne çık">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <script src="js/navbar-dropdown.js"></script>
+    <script src="js/scroll-top.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,757 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yol Açma ve Dolgu Hizmeti | AR-EL İnşaat ve Hafriyat</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta
+      name="description"
+      content="AR-EL İnşaat ve Hafriyat ile yol açma, dolgu, kot ayarı ve zemin düzenleme çalışmalarında plana uygun, güvenli ve verimli saha çözümleri alın."
+    />
+    <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+    <style>
+      @media (max-width: 767px) {
+        #tmNav .navbar-collapse {
+          background: #ffffff;
+          overflow-y: auto;
+        }
+
+        #tmNav .navbar-nav {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+        }
+
+        #tmNav .nav-item {
+          display: block;
+          width: 100%;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link,
+        #tmNav .navbar-collapse .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          color: #111111;
+          font-size: 17px;
+          font-weight: 700;
+          padding: 12px 4px;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-submenu {
+          display: none;
+          position: static;
+          min-width: 100%;
+          margin: 4px 0 12px;
+          padding: 4px 0 4px 14px;
+          background: transparent;
+          border: 0;
+          border-left: 2px solid rgba(216, 161, 6, 0.24);
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+
+        #tmNav .tm-nav-dropdown.is-open > .tm-nav-submenu {
+          display: block;
+        }
+
+        #tmNav .tm-nav-submenu li {
+          display: block;
+          width: 100%;
+        }
+
+        #tmNav .tm-nav-submenu-link {
+          display: block;
+          color: #1f2937;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.5;
+          padding: 8px 0;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #tmNav .tm-nav-link:hover,
+        #tmNav .tm-nav-link:focus,
+        #tmNav .tm-nav-submenu-link:hover,
+        #tmNav .tm-nav-submenu-link:focus {
+          color: #d8a106;
+        }
+      }
+    </style>
+    <style>
+      .yd-page { background: #f6f7f8; }
+      .yd-container { max-width: 1240px; }
+      .yd-section { padding: 100px 0; }
+
+      .yd-section-title {
+        margin-bottom: 18px;
+        color: #151515;
+        font-size: clamp(2rem, 3.2vw, 2.85rem);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+      .yd-section-title::after {
+        content: "";
+        display: block;
+        width: 74px;
+        height: 4px;
+        margin-top: 14px;
+        border-radius: 999px;
+        background: #d8a106;
+      }
+      .yd-section-text {
+        color: #666666;
+        font-size: 1.05rem;
+        line-height: 1.84;
+      }
+
+      .yd-hero {
+        position: relative;
+        min-height: clamp(360px, 45vh, 460px);
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        padding: 122px 0 58px;
+        background: #111111;
+      }
+      .yd-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(110deg, rgba(8,8,8,0.84) 0%, rgba(8,8,8,0.64) 48%, rgba(8,8,8,0.42) 100%), url("img/hizmetler/yol-acma-dolgu/yol-acma-dolgu-hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .yd-hero-content { position: relative; z-index: 1; color: #ffffff; }
+      .yd-breadcrumb { margin: 0 0 10px; color: rgba(255,255,255,0.84); font-size: 0.95rem; }
+      .yd-breadcrumb a { color: #f5b400; text-decoration: none; }
+      .yd-hero-title { margin: 0; color: #ffffff; font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; }
+
+      .yd-intro-grid,
+      .yd-info-grid,
+      .yd-tech-grid {
+        display: grid;
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+        gap: 34px;
+        align-items: center;
+      }
+
+      .yd-tags {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .yd-tag {
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(0,0,0,0.08);
+        background: #ffffff;
+        color: #1c1c1c;
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .yd-main-image,
+      .yd-info-image {
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 14px 34px rgba(0,0,0,0.13);
+      }
+      .yd-main-image img,
+      .yd-info-image img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .yd-gallery {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 18px;
+      }
+      .yd-gallery figure {
+        margin: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.11);
+      }
+      .yd-gallery img {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s ease;
+      }
+      .yd-gallery figure:hover img { transform: scale(1.06); }
+
+      .yd-services-grid,
+      .yd-areas-grid,
+      .yd-equipment-grid,
+      .yd-why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 22px;
+      }
+
+      .yd-card,
+      .yd-area,
+      .yd-equipment,
+      .yd-why,
+      .yd-step {
+        border-radius: 16px;
+        background: #ffffff;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      }
+
+      .yd-card {
+        padding: 26px 24px;
+        transition: transform 0.26s ease, box-shadow 0.26s ease;
+      }
+      .yd-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+      }
+      .yd-card-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #171717;
+        background: #f5b400;
+      }
+      .yd-card h3 { margin-bottom: 9px; color: #111111; font-size: 1.2rem; font-weight: 700; }
+      .yd-card p { margin: 0; color: #666666; font-size: 0.97rem; line-height: 1.72; }
+
+      .yd-info-block { background: #f3f4f5; }
+
+      .yd-timeline {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0,1fr));
+        gap: 20px;
+      }
+      .yd-step {
+        position: relative;
+        padding: 28px 20px 24px;
+      }
+      .yd-step::after {
+        content: "";
+        position: absolute;
+        top: 46px;
+        right: -10px;
+        width: 20px;
+        height: 2px;
+        background: rgba(216,161,6,0.55);
+      }
+      .yd-step:last-child::after { display: none; }
+      .yd-step-number {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 14px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 800;
+        color: #171717;
+        background: #f5b400;
+      }
+      .yd-step h4 { margin-bottom: 8px; color: #151515; font-size: 1.06rem; font-weight: 700; }
+      .yd-step p { margin: 0; color: #666666; font-size: 0.95rem; line-height: 1.68; }
+
+      .yd-area,
+      .yd-equipment,
+      .yd-why { padding: 22px 20px; }
+      .yd-area-head,
+      .yd-equipment-head,
+      .yd-why-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .yd-area-head i,
+      .yd-equipment-head i,
+      .yd-why-head i {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #171717;
+        background: rgba(245,180,0,0.25);
+      }
+      .yd-area h4,
+      .yd-equipment h4,
+      .yd-why h4 { margin: 0; color: #151515; font-size: 1.02rem; font-weight: 700; }
+      .yd-area p,
+      .yd-equipment p,
+      .yd-why p { margin: 0; color: #666666; font-size: 0.95rem; line-height: 1.7; }
+
+      .yd-tech-list {
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .yd-tech-list li {
+        position: relative;
+        margin-bottom: 12px;
+        padding-left: 28px;
+        color: #4e4e4e;
+        line-height: 1.7;
+      }
+      .yd-tech-list li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: #d8a106;
+      }
+
+      .yd-cta { padding: 0 0 100px; }
+      .yd-cta-inner {
+        border-radius: 20px;
+        padding: 44px 42px;
+        background: linear-gradient(135deg, #111111 0%, #1a1a1a 52%, #2b281c 100%);
+        box-shadow: 0 18px 42px rgba(0,0,0,0.22);
+      }
+      .yd-cta h3 {
+        margin: 0 0 12px;
+        color: #ffffff;
+        font-size: clamp(1.6rem, 2.9vw, 2.06rem);
+        font-weight: 800;
+      }
+      .yd-cta p {
+        margin: 0;
+        max-width: 620px;
+        color: rgba(255,255,255,0.86);
+        line-height: 1.75;
+      }
+      .yd-cta-actions {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .yd-btn {
+        min-width: 170px;
+        padding: 13px 22px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .yd-btn:hover { transform: translateY(-2px); text-decoration: none; }
+      .yd-btn-primary { color: #111111; background: #f5b400; }
+      .yd-btn-primary:hover { color: #111111; box-shadow: 0 10px 24px rgba(245,180,0,0.35); }
+      .yd-btn-outline {
+        color: #ffffff;
+        border: 1px solid rgba(255,255,255,0.32);
+        background: rgba(255,255,255,0.05);
+      }
+      .yd-btn-outline:hover { color: #ffffff; background: rgba(255,255,255,0.12); }
+
+      @media (max-width: 1199px) {
+        .yd-timeline { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .yd-step::after { display: none; }
+      }
+      @media (max-width: 991px) {
+        .yd-section { padding: 84px 0; }
+        .yd-intro-grid,
+        .yd-info-grid,
+        .yd-tech-grid { grid-template-columns: 1fr; }
+        .yd-services-grid,
+        .yd-areas-grid,
+        .yd-equipment-grid,
+        .yd-why-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        .yd-main-image img,
+        .yd-info-image img { height: 320px; }
+      }
+      @media (max-width: 767px) {
+        .yd-hero { min-height: 360px; padding: 114px 0 46px; }
+        .yd-section { padding: 72px 0; }
+        .yd-gallery,
+        .yd-services-grid,
+        .yd-timeline,
+        .yd-areas-grid,
+        .yd-equipment-grid,
+        .yd-why-grid { grid-template-columns: 1fr; }
+        .yd-gallery img { height: 220px; }
+        .yd-cta { padding-bottom: 76px; }
+        .yd-cta-inner { padding: 32px 24px; }
+        .yd-btn { width: 100%; }
+      }
+    </style>
+  </head>
+  <body class="tm-detail-page yd-page">
+    <header class="header-wrapper">
+      <div class="top-bar">
+        <div class="container top-bar-inner">
+          <p class="top-bar-text">AR-EL İnşaat &amp; Hafriyat'a hoş geldiniz.</p>
+          <div class="top-bar-phones">
+            <a href="mailto:arelhafriyat@gmail.com"><i class="fas fa-envelope"></i> arelhafriyat@gmail.com</a>
+            <a href="tel:+905470915252"><i class="fas fa-phone-alt"></i> +90 547 091 52 52</a>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-md tm-navbar main-navbar sticky-top" id="tmNav">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="img/arel-logo.jpg" alt="AR-EL Hafriyat" class="tm-brand-logo" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+      <i class="fas fa-bars navbar-toggler-icon"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="tm-mobile-menu-head">
+        <span class="tm-mobile-menu-title">Menü</span>
+        <button type="button" class="tm-mobile-menu-close" aria-label="Menüyü Kapat">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="index.html">Anasayfa</a>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Hizmetlerimiz <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Hizmetlerimiz Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hafriyat-hizmetleri.html">Hafriyat Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="yikim.html">Yıkım Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="altyapi-hafriyat.html">Altyapı Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+            <li><a class="tm-nav-submenu-link" href="toprak-malzeme.html">Toprak ve Malzeme Hizmetleri</a></li>
+            <li><a class="tm-nav-submenu-link" href="peyzaj-cevre-duzenleme.html">Peyzaj ve Çevre Düzenleme</a></li>
+            <li><a class="tm-nav-submenu-link" href="kepce-kiralama.html">Kepçe Kiralama</a></li>
+            <li><a class="tm-nav-submenu-link" href="mini-ekipmanlar.html">Mini Ekipmanlarımız</a></li>
+            <li><a class="tm-nav-submenu-link" href="yol-acma-dolgu.html">Yol Açma ve Dolgu</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item tm-nav-dropdown">
+          <a class="nav-link tm-nav-link tm-nav-dropdown-toggle" href="javascript:void(0)" aria-expanded="false">
+            Kurumsal <i class="fas fa-chevron-down tm-nav-icon" aria-hidden="true"></i>
+          </a>
+          <ul class="tm-nav-submenu" aria-label="Kurumsal Alt Menüsü">
+            <li><a class="tm-nav-submenu-link" href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a class="tm-nav-submenu-link" href="vizyonumuz.html">Vizyonumuz</a></li>
+            <li><a class="tm-nav-submenu-link" href="misyonumuz.html">Misyonumuz</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link tm-nav-link" href="iletisim.html">İletişim</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    </header>
+
+    <header class="yd-hero">
+      <div class="container yd-container yd-hero-content">
+        <p class="yd-breadcrumb"><a href="index.html">Anasayfa</a> / Yol Açma ve Dolgu Hizmeti</p>
+        <h1 class="yd-hero-title">Yol Açma ve Dolgu Hizmeti</h1>
+      </div>
+    </header>
+
+    <section class="yd-section">
+      <div class="container yd-container">
+        <div class="yd-intro-grid">
+          <div>
+            <h2 class="yd-section-title">Profesyonel Yol Açma ve Dolgu Çözümleri</h2>
+            <p class="yd-section-text">
+              AR-EL İnşaat &amp; Hafriyat olarak; zorlu arazi şartlarında yol açma, dolgu, kot ayarı, zemin düzenleme ve saha hazırlığı çalışmalarını hızlı, güvenli ve plana uygun şekilde gerçekleştiriyoruz.
+              Modern makine parkımız ve deneyimli ekibimizle saha verimliliğini artıran, projeye uygun ve uzun ömürlü çözümler sunuyoruz.
+            </p>
+            <div class="yd-tags">
+              <span class="yd-tag">Zorlu arazilerde çözüm</span>
+              <span class="yd-tag">Planlı ve güvenli operasyon</span>
+              <span class="yd-tag">Maksimum saha verimliliği</span>
+            </div>
+          </div>
+          <div class="yd-main-image">
+            <img src="img/hizmetler/yol-acma-dolgu/yol-acma-dolgu-hero.jpg" alt="Yol açma ve dolgu çalışması" />
+          </div>
+        </div>
+
+        <div class="yd-gallery">
+          <figure><img src="img/hizmetler/peyzaj-cevre/peyzaj-cevre-2.jpg" alt="Şantiye düzenleme" /></figure>
+          <figure><img src="img/hizmetler/yol-acma-dolgu/yol-acma-dolgu-2.jpg" alt="Arazi yolu açma" /></figure>
+          <figure><img src="img/hizmetler/yol-acma-dolgu/yol-acma-dolgu-3.jpg" alt="Dolgu çalışması" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="yd-section pt-0">
+      <div class="container yd-container">
+        <h2 class="yd-section-title">Yol Açma ve Dolgu Hizmetlerimiz</h2>
+        <div class="yd-services-grid">
+          <article class="yd-card">
+            <span class="yd-card-icon"><i class="fas fa-road"></i></span>
+            <h3>Arazi Yol Açma</h3>
+            <p>Zorlu arazi koşullarında ulaşım ve saha kullanımı için güvenli yol açma çalışmaları gerçekleştiriyoruz.</p>
+          </article>
+          <article class="yd-card">
+            <span class="yd-card-icon"><i class="fas fa-layer-group"></i></span>
+            <h3>Dolgu Uygulamaları</h3>
+            <p>Proje ihtiyaçlarına uygun dolgu çalışmalarıyla zemini daha dengeli ve kullanıma hazır hale getiriyoruz.</p>
+          </article>
+          <article class="yd-card">
+            <span class="yd-card-icon"><i class="fas fa-ruler-combined"></i></span>
+            <h3>Kot Ayarı</h3>
+            <p>Saha seviyelerini teknik plana uygun şekilde düzenleyerek doğru kot seviyesine getiriyoruz.</p>
+          </article>
+          <article class="yd-card">
+            <span class="yd-card-icon"><i class="fa-solid fa-ruler-combined"></i></span>
+            <h3>Zemin Düzenleme</h3>
+            <p>Yol, geçiş alanı ve şantiye içi kullanım için zemini planlı şekilde düzenliyoruz.</p>
+          </article>
+          <article class="yd-card">
+            <span class="yd-card-icon"><i class="fas fa-truck-pickup"></i></span>
+            <h3>Şantiye İçi Yol Hazırlığı</h3>
+            <p>Şantiye alanlarında araç ve ekipman geçişini kolaylaştıran geçici veya kalıcı yol çözümleri sunuyoruz.</p>
+          </article>
+          <article class="yd-card">
+            <span class="yd-card-icon"><i class="fas fa-chart-line"></i></span>
+            <h3>Saha Verimliliği Çözümleri</h3>
+            <p>Arazi kullanımını daha verimli hale getirmek için yol, dolgu ve düzenleme çalışmalarını bütüncül şekilde yürütüyoruz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yd-section yd-info-block">
+      <div class="container yd-container">
+        <div class="yd-info-grid">
+          <div>
+            <h2 class="yd-section-title">Yol Açma ve Dolgu Nedir?</h2>
+            <p class="yd-section-text">
+              Yol açma ve dolgu; arazi üzerinde ulaşım, şantiye kullanımı, altyapı geçişi veya yapılaşma için uygun güzergahların oluşturulması ve zeminin gerekli seviyeye getirilmesi sürecidir.
+              Bu çalışmalar; kazı, dolgu, tesviye, kot ayarı ve zemin düzenleme adımlarını kapsar.
+              Doğru planlanan yol açma ve dolgu uygulamaları, saha verimliliğini artırır ve projelerin daha güvenli ilerlemesini sağlar.
+            </p>
+          </div>
+          <div class="yd-info-image">
+            <img src="img/hizmetler/peyzaj-cevre/peyzaj-cevre-2.jpg" alt="Yol açma ve dolgu uygulaması" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="yd-section">
+      <div class="container yd-container">
+        <h2 class="yd-section-title">Yol Açma ve Dolgu Süreci Nasıl İlerler?</h2>
+        <div class="yd-timeline">
+          <article class="yd-step">
+            <span class="yd-step-number">1</span>
+            <h4>Keşif ve Güzergah Planlama</h4>
+            <p>Arazi yapısı incelenir, yol güzergahı, kot farkları ve dolgu ihtiyacı belirlenir.</p>
+          </article>
+          <article class="yd-step">
+            <span class="yd-step-number">2</span>
+            <h4>Kazı ve Alan Hazırlığı</h4>
+            <p>Güzergah üzerinde gerekli kazı, temizleme ve zemin hazırlığı işlemleri yapılır.</p>
+          </article>
+          <article class="yd-step">
+            <span class="yd-step-number">3</span>
+            <h4>Dolgu ve Tesviye</h4>
+            <p>Belirlenen alanlara dolgu uygulanır, zemin dengelenir ve teknik plana uygun seviyeye getirilir.</p>
+          </article>
+          <article class="yd-step">
+            <span class="yd-step-number">4</span>
+            <h4>Kontrol ve Saha Teslimi</h4>
+            <p>Yol ve dolgu alanı kontrol edilir, saha kullanıma hazır şekilde teslim edilir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yd-section pt-0">
+      <div class="container yd-container">
+        <h2 class="yd-section-title">Yol Açma ve Dolgu Uygulama Alanları</h2>
+        <div class="yd-areas-grid">
+          <article class="yd-area"><div class="yd-area-head"><i class="fas fa-warehouse"></i><h4>Şantiye İçi Yollar</h4></div><p>Şantiye içinde araç, ekipman ve personel akışını kolaylaştırmak için güvenli geçiş yolları oluşturulur.</p></article>
+          <article class="yd-area"><div class="yd-area-head"><i class="fas fa-map-signs"></i><h4>Arazi Yolları</h4></div><p>Zorlu arazi koşullarında ulaşımı mümkün hale getiren planlı yol açma çalışmaları yapılır.</p></article>
+          <article class="yd-area"><div class="yd-area-head"><i class="fas fa-truck-moving"></i><h4>Geçici Servis Yolları</h4></div><p>Proje süresince lojistik akışı destekleyen geçici servis yolları hazırlanır.</p></article>
+          <article class="yd-area"><div class="yd-area-head"><i class="fas fa-project-diagram"></i><h4>Altyapı Güzergahları</h4></div><p>Altyapı hatları için uygun güzergah açılır ve zemin erişilebilir hale getirilir.</p></article>
+          <article class="yd-area"><div class="yd-area-head"><i class="fas fa-layer-group"></i><h4>Dolgu Alanları</h4></div><p>Kot farkı bulunan bölgelerde dolgu ile zemin dengesi sağlanarak saha kullanımı artırılır.</p></article>
+          <article class="yd-area"><div class="yd-area-head"><i class="fa-solid fa-map-location-dot"></i><h4>Saha Düzenleme Bölgeleri</h4></div><p>Operasyon alanları planlı şekilde düzenlenerek güvenli ve verimli çalışma ortamı oluşturulur.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yd-section pt-0">
+      <div class="container yd-container">
+        <div class="yd-tech-grid">
+          <div>
+            <h2 class="yd-section-title">Plana Uygun ve Verimli Saha Uygulaması</h2>
+            <p class="yd-section-text">
+              Yol açma ve dolgu çalışmalarında arazi yapısı, kot farkları, zemin taşıma kapasitesi ve proje planı dikkate alınmalıdır.
+              AR-EL İnşaat &amp; Hafriyat olarak operasyonlarımızı güvenli, planlı ve saha verimliliğini artıracak şekilde yürütüyoruz.
+            </p>
+            <ul class="yd-tech-list">
+              <li>Projeye uygun güzergah belirleme</li>
+              <li>Kontrollü kazı ve dolgu uygulaması</li>
+              <li>Doğru kot ve tesviye çalışması</li>
+              <li>Saha içi ulaşımı kolaylaştırma</li>
+              <li>Güvenli ve verimli çalışma alanı oluşturma</li>
+            </ul>
+          </div>
+          <div class="yd-info-image">
+            <img src="img/hizmetler/peyzaj-cevre/peyzaj-cevre-1.jpg" alt="Plana uygun saha verimliliği" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="yd-section pt-0">
+      <div class="container yd-container">
+        <h2 class="yd-section-title">Yol Açma ve Dolgu Ekipmanlarımız</h2>
+        <p class="yd-section-text mb-4">Projelerimizde arazi şartlarına ve işin kapsamına uygun iş makineleri kullanarak hızlı, güvenli ve planlı uygulamalar gerçekleştiriyoruz.</p>
+        <div class="yd-equipment-grid">
+          <article class="yd-equipment"><div class="yd-equipment-head"><i class="fas fa-truck-monster"></i><h4>Ekskavatör</h4></div><p>Kazı ve güzergah açma çalışmalarında güçlü performans sağlar.</p></article>
+          <article class="yd-equipment"><div class="yd-equipment-head"><i class="fa-solid fa-truck-front"></i><h4>Kepçe</h4></div><p>Dolgu ve zemin düzenleme adımlarında pratik uygulama sunar.</p></article>
+          <article class="yd-equipment"><div class="yd-equipment-head"><i class="fas fa-truck-loading"></i><h4>Loader</h4></div><p>Malzeme yükleme ve saha içi transfer süreçlerinde verim sağlar.</p></article>
+          <article class="yd-equipment"><div class="yd-equipment-head"><i class="fas fa-ruler-horizontal"></i><h4>Greyder</h4></div><p>Yol yüzeyi düzenleme ve kot dengeleme işlemlerinde hassasiyet sağlar.</p></article>
+          <article class="yd-equipment"><div class="yd-equipment-head"><i class="fas fa-circle-notch"></i><h4>Silindir</h4></div><p>Dolgu alanlarının sıkıştırılmasında zemin dayanımı ve denge oluşturur.</p></article>
+          <article class="yd-equipment"><div class="yd-equipment-head"><i class="fas fa-truck"></i><h4>Kamyon</h4></div><p>Dolgu malzemesi ve hafriyat taşımalarında hızlı lojistik desteği sunar.</p></article>
+          <article class="yd-equipment"><div class="yd-equipment-head"><i class="fa-solid fa-screwdriver-wrench"></i><h4>Mini ekipmanlar</h4></div><p>Dar ve hassas alanlarda kontrollü düzenleme için destek sağlar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yd-section pt-0">
+      <div class="container yd-container">
+        <h2 class="yd-section-title">Neden AR-EL İnşaat &amp; Hafriyat?</h2>
+        <div class="yd-why-grid">
+          <article class="yd-why"><div class="yd-why-head"><i class="fas fa-mountain"></i><h4>Zorlu Arazide Deneyim</h4></div><p>Farklı arazi koşullarında güvenli ve planlı saha yönetimi tecrübesine sahibiz.</p></article>
+          <article class="yd-why"><div class="yd-why-head"><i class="fas fa-cogs"></i><h4>Modern Makine Parkı</h4></div><p>Proje ihtiyacına uygun güncel ekipman altyapısıyla güçlü uygulama kapasitesi sunuyoruz.</p></article>
+          <article class="yd-why"><div class="yd-why-head"><i class="fas fa-clipboard-list"></i><h4>Planlı Operasyon</h4></div><p>Sahada keşif, uygulama ve kontrol adımlarını sistemli şekilde yürütüyoruz.</p></article>
+          <article class="yd-why"><div class="yd-why-head"><i class="fas fa-bolt"></i><h4>Hızlı Uygulama</h4></div><p>İş akışını doğru planlayarak projeleri hedef süre içinde tamamlıyoruz.</p></article>
+          <article class="yd-why"><div class="yd-why-head"><i class="fas fa-shield-alt"></i><h4>Güvenli Saha Yönetimi</h4></div><p>Tüm operasyonlarda iş güvenliği önceliğiyle kontrollü çalışma ortamı sağlıyoruz.</p></article>
+          <article class="yd-why"><div class="yd-why-head"><i class="fas fa-check-circle"></i><h4>Verimli Teslimat</h4></div><p>Çalışma alanını kullanıma hazır, düzenli ve proje hedeflerine uygun şekilde teslim ediyoruz.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="yd-cta">
+      <div class="container yd-container">
+        <div class="yd-cta-inner">
+          <h3>Yol Açma ve Dolgu Hizmeti İçin Teklif Alın</h3>
+          <p>Zorlu arazi şartlarında yol açma, dolgu ve saha düzenleme ihtiyaçlarınız için profesyonel ekibimizden hızlı teklif alın.</p>
+          <div class="yd-cta-actions">
+            <a href="iletisim.html" class="yd-btn yd-btn-primary"><i class="fas fa-phone-alt"></i> İletişime Geç</a>
+            <a href="https://wa.me/905470915252?text=Merhabalar,%20bilgi%20alabilir%20miyim?" class="yd-btn yd-btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="tm-site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4>AR-EL Hafriyat</h4>
+            <p>Hafriyat, kazı, yıkım, dolgu ve iş makinesi kiralama alanlarında profesyonel çözümler sunuyoruz.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+              <li><a href="index.html#infinite">Anasayfa</a></li>
+              <li><a href="index.html#whatwedo">Hizmetlerimiz</a></li>
+              <li><a href="index.html#gallery">Kurumsal</a></li>
+              <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>Hizmetler</h4>
+            <ul>
+              <li><a href="hafriyat-hizmetleri.html">Hafriyat</a></li>
+              <li><a href="yikim.html">Yıkım</a></li>
+              <li><a href="yikim.html">Moloz Taşıma</a></li>
+              <li><a href="dolgu-tesviye.html">Dolgu ve Tesviye</a></li>
+              <li><a href="mini-ekipmanlar.html">Mini Ekipmanlarımız</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4>İletişim</h4>
+            <ul>
+              <li>+90 547 091 52 52</li>
+              <li>arelhafriyat@gmail.com</li>
+              <li><a href="https://www.instagram.com/arelhafriyat" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> @arelhafriyat</a></li>
+              <li>İstanbul, Türkiye</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tm-footer-bottom">&copy; 2026 AR-EL Hafriyat. Tüm hakları saklıdır.</div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $('#tmNav a').on('click', function() {
+        $('.navbar-collapse').removeClass('show');
+      });
+    </script>
+      <a href="#" class="scroll-top-btn" aria-label="Sayfanın en üstüne çık">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <script src="js/navbar-dropdown.js"></script>
+    <script src="js/scroll-top.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
